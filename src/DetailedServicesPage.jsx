@@ -70,7 +70,7 @@ export default function DetailedServicesPage() {
                                     display: 'grid',
                                     gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                                     gap: 'clamp(3rem, 8vw, 6rem)',
-                                    alignItems: 'center',
+                                    alignItems: 'stretch', // Changed from center to stretch
                                     marginBottom: '160px',
                                     padding: '96px 0'
                                 }}
@@ -81,13 +81,14 @@ export default function DetailedServicesPage() {
                                     whileInView="visible"
                                     viewport={{ once: true, margin: "-100px" }}
                                     variants={fadeUp}
-                                    style={{ order: isEven ? 2 : 1 }}
+                                    style={{ order: isEven ? 2 : 1, height: '100%' }} // Ensure height is 100%
                                 >
                                     <div style={{
                                         position: 'relative',
                                         borderRadius: '32px',
                                         overflow: 'hidden',
-                                        aspectRatio: '16/10',
+                                        height: '100%', // Match parent height
+                                        minHeight: '400px', // Prevent too small on thin screens
                                         boxShadow: '0 10px 40px rgba(0,0,0,0.1)'
                                     }}>
                                         <img
@@ -95,7 +96,7 @@ export default function DetailedServicesPage() {
                                             alt={service.title}
                                             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                                         />
-                                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(255,255,255,0.1), transparent)' }} />
+                                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,18,18,0.1), transparent)' }} />
                                     </div>
                                 </motion.div>
 
