@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --gold: #B8860B;
-  /* Darker gold for better contrast on white */
-  --gold-rgb: 184, 134, 11;
-  --gold-dark: #8B6508;
-  --gold-light: #DAA520;
+  --gold: #C5A059;
+  /* Matte Gold from request */
+  --gold-rgb: 197, 160, 89;
+  --gold-dark: #A68642;
+  --gold-light: #D4B674;
 
-  --black: #0F0F0F;
+  --black: #121212;
+  /* Carbon Black from request */
   --surface: #FFFFFF;
-  --surface-2: #F9FAFB;
+  --surface-2: #F9F9F9;
+  /* Near white from request */
   --surface-3: #F3F4F6;
-  --border: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.15);
+  --border: rgba(0, 0, 0, 0.05);
+  /* Tenue border from request */
+  --border-hover: rgba(0, 0, 0, 0.1);
 
   --white: #FFFFFF;
   --gray-100: #F3F4F6;
@@ -260,8 +263,20 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, 1fr);
+  .benefit-card {
+    background: #F9F9F9;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s var(--ease);
+  }
+
+  .benefit-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transform: translateY(-4px);
   }
 }
 
@@ -334,6 +349,7 @@ ul {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   font-family: var(--font-display);
   font-weight: 700;
@@ -341,7 +357,8 @@ ul {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.9rem 2rem;
-  border-radius: 6px;
+  border-radius: 8px;
+  /* 8px radius from request */
   min-height: 48px;
   cursor: pointer;
   transition: all 0.35s var(--ease);
@@ -351,24 +368,29 @@ ul {
   background: var(--black);
   color: var(--white);
   border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-gold:hover {
   background: var(--gold);
   color: var(--white);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  /* Soft shadow on hover */
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--black);
-  border: 1px solid var(--black);
+  border: 1px solid var(--gold);
+  /* Sutil gold border from request */
 }
 
 .btn-ghost:hover {
   background: var(--black);
   border-color: var(--black);
   color: var(--white);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ── Cards ── */
@@ -432,16 +454,20 @@ ul {
   font-family: var(--font-display);
   font-weight: 900;
   font-variant-numeric: tabular-nums;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  /* Increased by 20% approximately */
   color: var(--gold);
   line-height: 1;
 }
 
 .stat-label {
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  /* SemiBold from request */
+  letter-spacing: 0.1em;
+  /* letter-spacing 0.1em from request */
   text-transform: uppercase;
+  /* Uppercase from request */
   color: var(--gold);
   margin-top: 0.75rem;
 }

@@ -102,7 +102,7 @@ function Header() {
             <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="flex items-center gap-2 nav-link">
               <Phone size={14} /> {CONTENT.CONTACT.PHONE}
             </a>
-            <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold">Consulta Gratis</a>
+            <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '0.6rem 1.5rem', minHeight: '40px', fontSize: '0.75rem' }}>Consulta Gratis</a>
           </div>
 
           {/* Mobile Drawer Toggle */}
@@ -178,20 +178,20 @@ function Hero() {
                 <span className="badge"><HardHat size={14} /> Roofing & Restoration</span>
               </motion.div>
 
-              <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5.2rem)', marginTop: '24px', marginBottom: '40px', fontWeight: 800, maxWidth: '900px' }}>
+              <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', marginTop: '32px', marginBottom: '32px', fontWeight: 900, maxWidth: '1000px', lineHeight: 1.1 }}>
                 Tu <span className="gold">Techo</span> es Nuestra{' '}
                 <span style={{ fontStyle: 'italic' }}>Prioridad</span>
               </motion.h1>
 
-              <motion.p variants={fadeUp} custom={2} className="gray mb-5" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', maxWidth: 600, lineHeight: 1.7, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+              <motion.p variants={fadeUp} custom={2} className="gray" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', maxWidth: 650, lineHeight: 1.7, marginBottom: '48px' }}>
                 {CONTENT.HERO.DESCRIPTION}
               </motion.p>
 
-              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4 justify-center">
-                <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '0 2.5rem' }}>
+              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4 justify-center" style={{ marginBottom: '64px' }}>
+                <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '1.2rem 3rem' }}>
                   {CONTENT.HERO.CTA} <ChevronRight size={18} />
                 </a>
-                <Link to="/servicios" className="btn btn-ghost" style={{ padding: '0 2.5rem' }}>
+                <Link to="/servicios" className="btn btn-ghost" style={{ padding: '1.2rem 3rem' }}>
                   Nuestros Servicios
                 </Link>
               </motion.div>
@@ -229,20 +229,20 @@ function TrustBar() {
   ];
 
   return (
-    <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'var(--surface)', padding: 'clamp(2.5rem, 4vw, 3.5rem) 0' }}>
+    <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: '#FFFFFF', padding: 'clamp(3rem, 5vw, 5rem) 0' }}>
       <div className="container">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-6">
           {items.map((item, i) => (
             <motion.div
               key={i}
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               variants={fadeUp} custom={i}
-              className="flex items-center gap-4"
+              className="benefit-card"
             >
-              <div className="icon-box"><item.icon size={24} strokeWidth={2} /></div>
+              <div className="icon-box" style={{ background: 'rgba(var(--gold-rgb), 0.05)', color: 'var(--gold)' }}><item.icon size={22} strokeWidth={2} /></div>
               <div>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.95rem' }}>{item.title}</div>
-                <div className="gray" style={{ fontSize: '0.8rem' }}>{item.desc}</div>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'var(--black)' }}>{item.title}</div>
+                <div className="gray" style={{ fontSize: '0.75rem', fontWeight: 500 }}>{item.desc}</div>
               </div>
             </motion.div>
           ))}
