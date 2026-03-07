@@ -107,7 +107,7 @@ function Header() {
 
           {/* Mobile Drawer Toggle */}
           <div className="md:hidden flex items-center justify-end w-full">
-            <button style={{ color: '#fff' }} onClick={() => setOpen(true)}>
+            <button style={{ color: 'var(--black)' }} onClick={() => setOpen(true)}>
               <Menu size={28} />
             </button>
           </div>
@@ -165,8 +165,8 @@ function Hero() {
           alt="Tacurion Roofing Background"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
-        {/* Dark subtle gradient overlay to keep text readable - now centered */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.99) 100%)' }} />
+        {/* Dark subtle gradient overlay to keep text readable - now light/white based */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 100%)' }} />
       </div>
 
       <div className="container relative" style={{ zIndex: 10, width: '100%' }}>
@@ -324,7 +324,7 @@ function Storm() {
                 minHeight: 480,
                 objectFit: 'cover',
                 borderRadius: '24px',
-                filter: 'contrast(1.15) saturate(1.1) brightness(1.05)' // Subtle sharpen/enhancement effect
+                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
               }}
             />
           </div>
@@ -334,7 +334,7 @@ function Storm() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} style={{ width: '100%' }}>
           <motion.div variants={fadeUp}>
             <div className="divider" style={{ marginBottom: '1.5rem' }} />
-            <p className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1rem', color: '#C5A059' }}>
+            <p className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1rem', color: 'var(--gold)' }}>
               ESPECIALIDAD
             </p>
           </motion.div>
@@ -474,7 +474,7 @@ function Reviews() {
               className="card flex-col" style={{ display: 'flex', padding: '2rem' }}
             >
               <div className="flex items-center gap-4" style={{ marginBottom: '1.5rem' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(197, 160, 89, 0.1)', border: '1px solid rgba(197, 160, 89, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: 'var(--gold)' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(var(--gold-rgb), 0.1)', border: '1px solid rgba(var(--gold-rgb), 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: 'var(--gold)' }}>
                   {review.initials}
                 </div>
                 <div>
@@ -523,7 +523,7 @@ function Reviews() {
    ═══════════════════════════════════════════ */
 function Footer() {
   return (
-    <footer className="section" style={{ background: '#000', paddingBottom: '2rem' }}>
+    <footer className="section" style={{ background: 'var(--surface-2)', paddingBottom: '2rem', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-16" style={{ marginBottom: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--border)' }}>
           {/* Brand */}
@@ -701,14 +701,14 @@ function FloatingContactMenu({ onOpenTextModal }) {
   ];
 
   return (
-    <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', background: 'var(--surface-2)', border: '1px solid rgba(255,255,255,0.08)', zIndex: 9000, padding: '0.8rem 2.5rem', borderRadius: '100px', boxShadow: '0 15px 40px rgba(0,0,0,0.6)', display: 'flex', gap: '3rem', alignItems: 'center' }}>
+    <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', background: 'var(--surface)', border: '1px solid var(--border)', zIndex: 9000, padding: '0.8rem 2.5rem', borderRadius: '100px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', display: 'flex', gap: '3rem', alignItems: 'center' }}>
       {items.map((item, i) => (
         <button
           key={i}
           onClick={item.action}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', transition: 'all 0.2s', minWidth: '36px' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', color: 'var(--black)', background: 'transparent', border: 'none', cursor: 'pointer', transition: 'all 0.2s', minWidth: '36px' }}
           onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.color = 'var(--gold)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.color = '#fff'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.color = 'var(--black)'; }}
         >
           <item.icon size={22} strokeWidth={1.5} />
           <span style={{ fontSize: '0.65rem', fontWeight: 600 }}>{item.label}</span>

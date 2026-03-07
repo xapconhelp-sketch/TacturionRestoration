@@ -14,21 +14,21 @@ const stagger = {
 
 export function CTA() {
     return (
-        <section className="section" style={{ background: '#C5A059', position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
+        <section className="section" style={{ background: 'var(--black)', position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
             {/* Decorative Circle */}
             <div style={{ position: 'absolute', top: '-30%', right: '-5%', width: 400, height: 400, borderRadius: '50%', border: '1px solid rgba(0,0,0,0.08)' }} />
             <div className="container text-center" style={{ position: 'relative', zIndex: 1 }}>
-                <h2 style={{ color: '#000', fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.1 }}>
+                <h2 style={{ color: '#fff', fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.1 }}>
                     No esperes a la próxima tormenta
                 </h2>
-                <p style={{ color: 'rgba(0,0,0,0.6)', fontSize: '1.2rem', maxWidth: 600, margin: '0 auto 3rem', lineHeight: 1.6 }}>
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.2rem', maxWidth: 600, margin: '0 auto 3rem', lineHeight: 1.6 }}>
                     Agenda tu inspección gratuita hoy y protege tu mayor inversión con los expertos en restauración de Massachusetts.
                 </p>
                 <div className="flex justify-center flex-wrap gap-5">
-                    <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn" style={{ background: '#000', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn" style={{ background: 'var(--gold)', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <Phone size={20} /> Llamar Ahora
                     </a>
-                    <a href="#contact" className="btn" style={{ background: 'transparent', border: '2px solid #000', color: '#000', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <a href="#contact" className="btn" style={{ background: 'transparent', border: '2px solid #fff', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <Mail size={20} /> Enviar Email
                     </a>
                 </div>
@@ -39,17 +39,17 @@ export function CTA() {
 
 export default function DetailedServicesPage() {
     return (
-        <div style={{ background: '#121212', color: '#fff' }}>
+        <div style={{ background: 'var(--surface)', color: 'var(--black)' }}>
             {/* Hero / Header for Services */}
-            <section className="section" style={{ paddingTop: '160px', paddingBottom: '80px', background: 'radial-gradient(circle at top right, rgba(197, 160, 89, 0.05) 0%, transparent 70%)' }}>
+            <section className="section" style={{ paddingTop: '160px', paddingBottom: '80px', background: 'radial-gradient(circle at top right, rgba(184, 134, 11, 0.03) 0%, transparent 70%)' }}>
                 <div className="container text-center">
                     <motion.div initial="hidden" animate="visible" variants={stagger}>
                         <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '2rem' }} />
-                        <motion.p variants={fadeUp} style={{ color: '#C5A059', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+                        <motion.p variants={fadeUp} style={{ color: 'var(--gold)', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
                             Nuestras Especialidades
                         </motion.p>
                         <motion.h1 variants={fadeUp} style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800, marginBottom: '2rem', lineHeight: 1 }}>
-                            Servicios de <span style={{ color: '#C5A059' }}>Alto Nivel</span>
+                            Servicios de <span style={{ color: 'var(--gold)' }}>Alto Nivel</span>
                         </motion.h1>
                         <motion.p variants={fadeUp} className="gray mx-auto" style={{ maxWidth: '700px', fontSize: '1.2rem', lineHeight: 1.6 }}>
                             Soluciones integrales de roofing, restauración post-tormenta y acabados de interiores con la garantía de Tacurion Restoration.
@@ -88,14 +88,14 @@ export default function DetailedServicesPage() {
                                         borderRadius: '32px',
                                         overflow: 'hidden',
                                         aspectRatio: '16/10',
-                                        boxShadow: '0 20px 60px rgba(0,0,0,0.5)'
+                                        boxShadow: '0 10px 40px rgba(0,0,0,0.1)'
                                     }}>
                                         <img
                                             src={service.image}
                                             alt={service.title}
                                             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                                         />
-                                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,18,18,0.4), transparent)' }} />
+                                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(255,255,255,0.1), transparent)' }} />
                                     </div>
                                 </motion.div>
 
@@ -108,7 +108,7 @@ export default function DetailedServicesPage() {
                                     style={{ order: isEven ? 1 : 2 }}
                                 >
                                     <motion.div variants={fadeUp}>
-                                        <p style={{ color: '#C5A059', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1rem', fontSize: '0.9rem' }}>
+                                        <p style={{ color: 'var(--gold)', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1rem', fontSize: '0.9rem' }}>
                                             {service.category}
                                         </p>
                                         <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', fontWeight: 800, marginBottom: '2rem', lineHeight: 1.1 }}>
@@ -133,7 +133,7 @@ export default function DetailedServicesPage() {
                                                     <CheckCircle2 size={24} color="#C5A059" />
                                                 </div>
                                                 <div>
-                                                    <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#fff' }}>
+                                                    <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--black)' }}>
                                                         {item.label}
                                                     </h4>
                                                     <p className="gray" style={{ fontSize: '1rem', lineHeight: 1.6 }}>
