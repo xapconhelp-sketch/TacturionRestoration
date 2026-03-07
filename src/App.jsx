@@ -306,60 +306,64 @@ function Services() {
 }
 
 /* ═══════════════════════════════════════════
-   STORM SECTION
+   LEGACY SECTION
    ═══════════════════════════════════════════ */
-function Storm() {
+function Legacy() {
   return (
-    <section id="storm" className="section" style={{ background: 'var(--surface)' }}>
+    <section id="legacy" className="section" style={{ background: 'var(--surface)', padding: 'clamp(5rem, 10vw, 8rem) 0' }}>
       <div className="container flex-col lg:grid lg:grid-cols-2 gap-16 items-center" style={{ display: 'flex' }}>
-        {/* Image - Placed first so it stacks on top on mobile */}
+        {/* Logo / Image — left column */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} style={{ width: '100%' }}>
-          <div className="hero-img" style={{ borderRadius: '24px', overflow: 'hidden' }}>
+          <div style={{
+            background: '#F3F4F6',
+            borderRadius: '24px',
+            padding: 'clamp(2rem, 5vw, 4rem)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: 420,
+            boxShadow: '0 20px 50px rgba(0,0,0,0.06)'
+          }}>
             <img
-              src="/stormdamage.jpg"
-              alt="Storm damage"
-              style={{
-                width: '100%',
-                height: 'auto',
-                minHeight: 480,
-                objectFit: 'cover',
-                borderRadius: '24px',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-              }}
+              src="/logopng.png"
+              alt="Tacurion Restoration Logo"
+              style={{ maxWidth: '320px', width: '100%', height: 'auto', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }}
             />
           </div>
         </motion.div>
 
-        {/* Content */}
+        {/* Content — right column */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} style={{ width: '100%' }}>
           <motion.div variants={fadeUp}>
-            <div className="divider" style={{ marginBottom: '1.5rem' }} />
-            <p className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1rem', color: 'var(--gold)' }}>
-              ESPECIALIDAD
+            <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.5rem', color: 'var(--gold)' }}>
+              THE TACURION LEGACY
+            </p>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '1.5rem', color: 'var(--black)' }}>
+              Beyond Construction: We Build Peace of Mind.
+            </h2>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.7, fontStyle: 'italic', color: 'var(--gray-500)', marginBottom: '2.5rem', borderLeft: '3px solid var(--gold)', paddingLeft: '1.25rem' }}>
+              "Because a roof is more than a structure—it's the guardian of your family's history."
             </p>
           </motion.div>
-          <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>
-            {CONTENT.STORM_SECTION.TITLE}
-          </motion.h2>
-          <motion.p variants={fadeUp} className="gray" style={{ fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
-            {CONTENT.STORM_SECTION.DESCRIPTION}
-          </motion.p>
 
-          <motion.div variants={fadeUp} className="flex-col gap-4" style={{ display: 'flex' }}>
-            {CONTENT.STORM_SECTION.FEATURES.map((f, i) => (
-              <div key={i} className="card flex items-center gap-4" style={{ padding: '1.25rem 1.5rem', borderRadius: '16px', minHeight: 'auto', height: 'auto' }}>
-                <div className="icon-box" style={{ width: 40, height: 40, borderRadius: 10 }}>
-                  <CheckCircle2 size={20} />
-                </div>
-                <span style={{ fontWeight: 600, fontSize: '0.95rem' }}>{f}</span>
-              </div>
-            ))}
+          <motion.div variants={fadeUp}>
+            <div className="flex items-center gap-3" style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '1.5rem' }}>🤝</span>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--black)' }}>Our Essence</h3>
+            </div>
+            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--gray-500)', marginBottom: '1.5rem' }}>
+              At Tacurion Restoration, we don't just see shingles, gutters, or siding. We see the laughter in your living room, the safety of your children's sleep, and the investment of a lifetime.
+            </p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--gray-500)', marginBottom: '2.5rem' }}>
+              For the past 15 years, we've rooted ourselves in the Massachusetts community, not as contractors, but as neighbors. With over 500+ projects successfully completed in every specialty, our experience isn't just a number—it's a promise that we've seen it all and fixed it all with the same care we'd give our own homes.
+            </p>
           </motion.div>
 
-          <motion.div variants={fadeUp} style={{ marginTop: '2.5rem' }}>
-            <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '0 2.5rem' }}>
-              AGENDAR INSPECCIÓN GRATIS <ArrowRight size={18} />
-            </a>
+          <motion.div variants={fadeUp}>
+            <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--black)', marginBottom: '1rem' }}>Why We Do It</h3>
+            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--gray-500)' }}>
+              We bring more than just tools to your driveway. We bring a commitment to quality that covers what matters most. Whether it's a meticulous restoration or a precision installation, we work so that when the storm hits, the only thing you have to worry about is which movie to watch with your loved ones.
+            </p>
           </motion.div>
         </motion.div>
       </div>
@@ -738,7 +742,7 @@ function HomePage() {
       <Hero />
       <TrustBar />
       <Services />
-      <Storm />
+      <Legacy />
       <Process />
       <Reviews />
       <FAQ />
