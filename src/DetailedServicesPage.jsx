@@ -16,7 +16,7 @@ export function CTA() {
     return (
         <section className="section" style={{ background: 'var(--black)', position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
             {/* Decorative Circle */}
-            <div style={{ position: 'absolute', top: '-30%', right: '-5%', width: 400, height: 400, borderRadius: '50%', border: '1px solid rgba(0,0,0,0.08)' }} />
+            <div style={{ position: 'absolute', top: '-30%', right: '-5%', width: 400, height: 400, borderRadius: '50%', border: '1px solid rgba(197,160,89,0.1)' }} />
             <div className="container text-center" style={{ position: 'relative', zIndex: 1 }}>
                 <h2 style={{ color: '#fff', fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.1 }}>
                     No esperes a la próxima tormenta
@@ -41,7 +41,7 @@ export default function DetailedServicesPage() {
     return (
         <div style={{ background: 'var(--surface)', color: 'var(--black)' }}>
             {/* Hero / Header for Services */}
-            <section className="section" style={{ paddingTop: '160px', paddingBottom: '80px', background: 'radial-gradient(circle at top right, rgba(184, 134, 11, 0.03) 0%, transparent 70%)' }}>
+            <section className="section section-dark" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
                 <div className="container text-center">
                     <motion.div initial="hidden" animate="visible" variants={stagger}>
                         <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '2rem' }} />
@@ -130,7 +130,7 @@ export default function DetailedServicesPage() {
                                                     flexShrink: 0,
                                                     border: '1px solid rgba(197, 160, 89, 0.2)'
                                                 }}>
-                                                    <CheckCircle2 size={24} color="#C5A059" />
+                                                    <CheckCircle2 size={24} color="var(--gold)" />
                                                 </div>
                                                 <div>
                                                     <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--black)' }}>

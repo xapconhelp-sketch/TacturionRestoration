@@ -165,8 +165,8 @@ function Hero() {
           alt="Tacurion Roofing Background"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
-        {/* Dark subtle gradient overlay to keep text readable - now light/white based */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 100%)' }} />
+        {/* Dark cinematic overlay */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(18,18,18,0.8) 0%, rgba(18,18,18,0.92) 100%)' }} />
       </div>
 
       <div className="container relative" style={{ zIndex: 10, width: '100%' }}>
@@ -175,29 +175,29 @@ function Hero() {
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <motion.div initial="hidden" animate="visible" variants={stagger} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <motion.div variants={fadeUp} custom={0}>
-                <span className="badge"><HardHat size={14} /> Roofing & Restoration</span>
+                <span className="badge" style={{ borderColor: 'rgba(197,160,89,0.4)', color: 'var(--gold)', background: 'rgba(197,160,89,0.1)' }}><HardHat size={14} /> Roofing & Restoration</span>
               </motion.div>
 
-              <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', marginTop: '32px', marginBottom: '32px', fontWeight: 900, maxWidth: '1000px', lineHeight: 1.1 }}>
-                Tu <span className="gold">Techo</span> es Nuestra{' '}
+              <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', marginTop: '32px', marginBottom: '32px', fontWeight: 900, maxWidth: '1000px', lineHeight: 1.1, color: '#fff' }}>
+                Tu <span style={{ color: 'var(--gold)' }}>Techo</span> es Nuestra{' '}
                 <span style={{ fontStyle: 'italic' }}>Prioridad</span>
               </motion.h1>
 
-              <motion.p variants={fadeUp} custom={2} className="gray" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', maxWidth: 650, lineHeight: 1.7, marginBottom: '48px' }}>
+              <motion.p variants={fadeUp} custom={2} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', maxWidth: 650, lineHeight: 1.7, marginBottom: '48px', color: 'rgba(255,255,255,0.7)' }}>
                 {CONTENT.HERO.DESCRIPTION}
               </motion.p>
 
               <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4 justify-center" style={{ marginBottom: '64px' }}>
-                <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '1.2rem 3rem' }}>
+                <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn" style={{ background: 'var(--gold)', color: '#121212', padding: '1.2rem 3rem', fontWeight: 800 }}>
                   {CONTENT.HERO.CTA} <ChevronRight size={18} />
                 </a>
-                <Link to="/servicios" className="btn btn-ghost" style={{ padding: '1.2rem 3rem' }}>
+                <Link to="/servicios" className="btn" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', padding: '1.2rem 3rem' }}>
                   Nuestros Servicios
                 </Link>
               </motion.div>
 
               {/* Stats Row */}
-              <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-12 mt-12 justify-center" style={{ paddingTop: '40px', borderTop: '1px solid var(--border)', width: '100%' }}>
+              <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-12 mt-12 justify-center" style={{ paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.1)', width: '100%' }}>
                 {[
                   { num: '500+', label: 'Proyectos' },
                   { num: '15+', label: 'Años Exp.' },
@@ -257,7 +257,7 @@ function TrustBar() {
    ═══════════════════════════════════════════ */
 function Services() {
   return (
-    <section id="services" className="section">
+    <section id="services" className="section section-dark">
       <div className="container">
         {/* Section Header */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center" style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
@@ -372,7 +372,7 @@ function Storm() {
    ═══════════════════════════════════════════ */
 function Process() {
   return (
-    <section id="process" className="section">
+    <section id="process" className="section section-dark">
       <div className="container">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center" style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
           <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '1.5rem' }} />
@@ -406,7 +406,7 @@ function FAQ() {
   const [openIdx, setOpenIdx] = useState(null);
 
   return (
-    <section className="section" style={{ background: 'var(--surface)', paddingBottom: '120px' }}>
+    <section className="section section-warm" style={{ paddingBottom: '120px' }}>
       <div className="container" style={{ maxWidth: 780 }}>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center" style={{ marginBottom: 'clamp(3rem, 5vw, 4rem)' }}>
           <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '1.5rem' }} />
@@ -523,7 +523,7 @@ function Reviews() {
    ═══════════════════════════════════════════ */
 function Footer() {
   return (
-    <footer className="section" style={{ background: 'var(--surface-2)', paddingBottom: '2rem', borderTop: '1px solid var(--border)' }}>
+    <footer className="section section-dark" style={{ paddingBottom: '2rem' }}>
       <div className="container">
         <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-16" style={{ marginBottom: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--border)' }}>
           {/* Brand */}
@@ -587,7 +587,7 @@ function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex justify-between items-center flex-wrap gap-4" style={{ fontSize: '0.75rem', color: 'var(--gray-700)' }}>
+        <div className="flex justify-between items-center flex-wrap gap-4" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
           <span>© {new Date().getFullYear()} Tacurion Restoration LLC. All rights reserved.</span>
           <div className="flex gap-6">
             <a href="#" className="footer-link" style={{ fontSize: '0.75rem' }}>Privacidad</a>
@@ -701,14 +701,14 @@ function FloatingContactMenu({ onOpenTextModal }) {
   ];
 
   return (
-    <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', background: 'var(--surface)', border: '1px solid var(--border)', zIndex: 9000, padding: '0.8rem 2.5rem', borderRadius: '100px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', display: 'flex', gap: '3rem', alignItems: 'center' }}>
+    <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', background: '#121212', border: '1px solid rgba(255,255,255,0.08)', zIndex: 9000, padding: '0.8rem 2.5rem', borderRadius: '100px', boxShadow: '0 15px 40px rgba(0,0,0,0.4)', display: 'flex', gap: '3rem', alignItems: 'center' }}>
       {items.map((item, i) => (
         <button
           key={i}
           onClick={item.action}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', color: 'var(--black)', background: 'transparent', border: 'none', cursor: 'pointer', transition: 'all 0.2s', minWidth: '36px' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.3rem', color: '#fff', background: 'transparent', border: 'none', cursor: 'pointer', transition: 'all 0.2s', minWidth: '36px' }}
           onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.color = 'var(--gold)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.color = 'var(--black)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.color = '#fff'; }}
         >
           <item.icon size={22} strokeWidth={1.5} />
           <span style={{ fontSize: '0.65rem', fontWeight: 600 }}>{item.label}</span>
