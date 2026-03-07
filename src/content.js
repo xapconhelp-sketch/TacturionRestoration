@@ -1,7 +1,7 @@
 export const CONTENT = {
   META: {
-    TITLE: "Tacurion Restoration | Expertos en Techo y Restauración por Tormentas",
-    DESCRIPTION: "Servicios profesionales de roofing para hogares y empresas. Especialistas en reparación de daños por granizo y viento, reemplazo total y gestión de seguros.",
+    TITLE: "Tacurion Restoration | Roofing & Storm Damage en Fall River, MA",
+    DESCRIPTION: "Expertos en roofing y restauración por tormentas en Fall River, Massachusetts. Especialistas en viento y seguros de hogar.",
     AUTHOR: "Tacurion Restoration LLC",
   },
   BRAND: {

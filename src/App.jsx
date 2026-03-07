@@ -694,7 +694,7 @@ function ContactModal({ isOpen, onClose }) {
 function FloatingContactMenu({ onOpenTextModal }) {
   const cleanPhone = CONTENT.CONTACT.PHONE.replace(/\D/g, '');
   const items = [
-    { label: 'Chat', icon: MessageCircle, action: () => window.open(`https://wa.me/1${cleanPhone}?text=Hola, estoy interesado en sus servicios.`, '_blank') },
+    { label: 'Chat', icon: MessageCircle, action: () => window.open(`https://wa.me/1${cleanPhone}?text=${encodeURIComponent('Hola Tacurion Restoration, me gustaría solicitar una inspección gratuita para mi propiedad.')}`, '_blank') },
     { label: 'Call', icon: Phone, action: () => window.location.href = `tel:${cleanPhone}` },
     { label: 'Text', icon: Smartphone, action: onOpenTextModal },
     { label: 'Email', icon: Mail, action: onOpenTextModal }
