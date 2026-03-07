@@ -263,6 +263,10 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .benefit-card {
     background: #F9F9F9;
     border: 1px solid rgba(0, 0, 0, 0.05);
