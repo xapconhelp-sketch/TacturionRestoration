@@ -19,17 +19,17 @@ export function CTA() {
             <div style={{ position: 'absolute', top: '-30%', right: '-5%', width: 400, height: 400, borderRadius: '50%', border: '1px solid rgba(197,160,89,0.1)' }} />
             <div className="container text-center" style={{ position: 'relative', zIndex: 1 }}>
                 <h2 style={{ color: '#fff', fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.1 }}>
-                    No esperes a la próxima tormenta
+                    Don't Wait for the Next Storm
                 </h2>
                 <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.2rem', maxWidth: 600, margin: '0 auto 3rem', lineHeight: 1.6 }}>
-                    Agenda tu inspección gratuita hoy y protege tu mayor inversión con los expertos en restauración de Massachusetts.
+                    Schedule your free inspection today and protect your biggest investment with Massachusetts' restoration experts.
                 </p>
                 <div className="flex justify-center flex-wrap gap-5">
                     <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn" style={{ background: 'var(--gold)', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <Phone size={20} /> Llamar Ahora
+                        <Phone size={20} /> Call Now
                     </a>
                     <a href="#contact" className="btn" style={{ background: 'transparent', border: '2px solid #fff', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <Mail size={20} /> Enviar Email
+                        <Mail size={20} /> Send Email
                     </a>
                 </div>
             </div>
@@ -46,13 +46,13 @@ export default function DetailedServicesPage() {
                     <motion.div initial="hidden" animate="visible" variants={stagger}>
                         <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '2rem' }} />
                         <motion.p variants={fadeUp} style={{ color: 'var(--gold)', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                            Nuestras Especialidades
+                            Our Specialties
                         </motion.p>
                         <motion.h1 variants={fadeUp} style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800, marginBottom: '2rem', lineHeight: 1 }}>
-                            Servicios de <span style={{ color: 'var(--gold)' }}>Alto Nivel</span>
+                            High-Level <span style={{ color: 'var(--gold)' }}>Services</span>
                         </motion.h1>
                         <motion.p variants={fadeUp} className="gray mx-auto" style={{ maxWidth: '700px', fontSize: '1.2rem', lineHeight: 1.6 }}>
-                            Soluciones integrales de roofing, restauración post-tormenta y acabados de interiores con la garantía de Tacurion Restoration.
+                            Comprehensive roofing, post-storm restoration, and interior finishing solutions with the Tacurion Restoration guarantee.
                         </motion.p>
                     </motion.div>
                 </div>
@@ -147,7 +147,7 @@ export default function DetailedServicesPage() {
 
                                     <motion.div variants={fadeUp} style={{ marginTop: '3rem' }}>
                                         <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '0 2.5rem' }}>
-                                            Solicitar Información <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+                                            Request Information <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                                         </a>
                                     </motion.div>
                                 </motion.div>

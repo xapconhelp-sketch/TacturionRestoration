@@ -1,208 +1,230 @@
 export const CONTENT = {
   META: {
-    TITLE: "Tacurion Restoration | Roofing & Storm Damage en Fall River, MA",
-    DESCRIPTION: "Expertos en roofing y restauración por tormentas en Fall River, Massachusetts. Especialistas en viento y seguros de hogar.",
+    TITLE: "Tacurion Restoration | Roofing & Storm Damage in Fall River, MA",
+    DESCRIPTION: "Expert roofing and storm damage restoration in Fall River, Massachusetts. Specialists in wind, hail, and insurance claims.",
     AUTHOR: "Tacurion Restoration LLC",
   },
   BRAND: {
     NAME: "Tacurion Restoration",
     FULL_NAME: "Tacurion Restoration LLC",
-    SLOGAN: "Protegiendo Lo Que Más Importa: Tu Hogar",
+    SLOGAN: "Protecting What Matters Most: Your Home",
   },
   CONTACT: {
     PHONE: "(508) 617-3041",
     EMAIL: "tacurirestoration@gmail.com",
     ADDRESS: "50 Tecumseh St, Fall River, MA. 02721",
-    HOURS: "Disponibilidad 24/7 para Emergencias | Lun-Sáb: 8AM-6PM",
+    HOURS: "24/7 Emergency Services | Mon-Sat: 8AM-6PM",
   },
   NAV: [
-    { label: "Inicio", path: "/" },
-    { label: "Nuestros Servicios", path: "/servicios" },
+    { label: "Home", path: "/" },
+    { label: "Our Services", path: "/servicios" },
+    { label: "Insurance Claim", path: "/insurance-claim" },
   ],
+  INSURANCE_CLAIM: {
+    HERO: {
+      TITLE: "Protect Your Investment After The Disaster",
+      SUBTITLE: "Natural Disaster Rate Protection",
+      DESCRIPTION: "Don't let a storm compromise your financial stability. At Tacurion Restoration, we guarantee that your premium won't increase due to natural disaster claims while we restore your home's integrity.",
+    },
+    DEFENDER: {
+      TITLE: "YOU DESERVE AN ADVOCATE",
+      DESCRIPTION: "Insurance companies often provide settlements that barely cover the basics. We act as your professional shield, ensuring you receive every penny needed for a premium-grade restoration. We avoid insufficient settlements and fight for the full coverage your policy guarantees.",
+      IMAGE: "/insurance_consultant_roofing_1772813716640.png"
+    },
+    HIGHLIGHT: {
+      TITLE: "ZERO OUT-OF-POCKET EXPENSES",
+      DESCRIPTION: "Our goal is simple: that restoring your home doesn't represent a blow to your savings. We minimize your direct expenses by maximizing the efficiency of your coverage.",
+    },
+    FORM: {
+      TITLE: "Start Your Claim Today",
+      SUBTITLE: "Free, no-obligation consultation with our insurance experts.",
+      CTA: "Request Professional Defense",
+    }
+  },
   HERO: {
-    TITLE: "Tu Techo es Nuestra Prioridad Número Uno",
-    SUBTITLE: "Servicios de Roofing de Alto Nivel y Restauración Certificada",
-    DESCRIPTION: "¿Tu techo sufrió daños por tormenta? En Tacurion Restoration combinamos artesanía experta con una gestión impecable de seguros para restaurar la seguridad de tu propiedad.",
-    CTA: "Solicitar Inspección Gratuita",
+    TITLE: "Your Roof is Our Number One Priority",
+    SUBTITLE: "High-Level Roofing Services and Certified Restoration",
+    DESCRIPTION: "Did your roof suffer storm damage? At Tacurion Restoration, we combine expert craftsmanship with impeccable insurance management to restore the safety of your property.",
+    CTA: "Request Free Inspection",
   },
   SERVICES: [
     {
       id: "roof-replacement",
-      title: "Reemplazo de Techo Completo",
+      title: "Full Roof Replacement",
       description: "",
       features: [
-        "Ejecución de Alto Impacto: Instalación profesional completada en un ciclo de 1 a 2 días para minimizar interrupciones.",
-        "Garantía Estructural: Respaldo integral de por vida que asegura el valor y la integridad de su propiedad.",
-        "Protocolo de Limpieza Total: Limpieza exhaustiva del área de trabajo mediante sistemas de recolección de residuos industriales."
+        "High-Impact Execution: Professional installation completed in a 1 to 2-day cycle to minimize interruptions.",
+        "Structural Warranty: Comprehensive lifetime backing that secures the value and integrity of your property.",
+        "Total Cleaning Protocol: Exhaustive cleanup of the workspace using industrial waste collection systems."
       ],
       icon: "home",
     },
     {
       id: "storm-damage",
-      title: "Especialistas en Daños de Tormenta",
+      title: "Storm Damage Specialists",
       description: "",
       features: [
-        "Diagnóstico de Precisión: Inspección técnica mediante tecnología de drones para detectar daños imperceptibles a simple vista.",
-        "Reporte Técnico Sin Costo: Informe detallado y profesional del estado actual de su cubierta tras el evento climático.",
-        "Asesoría Técnica Preventiva: Planificación estratégica para fortalecer su hogar ante futuros fenómenos naturales."
+        "Precision Diagnosis: Technical inspection using drone technology to detect subtle damage invisible to the naked eye.",
+        "Free Technical Report: Detailed and professional report on the current state of your roof after the weather event.",
+        "Preventive Technical Advisory: Strategic planning to strengthen your home against future natural phenomena."
       ],
       icon: "cloud-lightning",
     },
     {
       id: "insurance-expert",
-      title: "Gestión con Aseguradoras",
+      title: "Insurance Management",
       description: "",
       features: [
-        "Negociación Especializada: Ajuste y negociación directa de suplementos para asegurar la cobertura total del proyecto.",
-        "Documentación Xactimate: Elaboración de presupuestos bajo estándares oficiales de la industria para agilizar procesos.",
-        "Optimización de Retorno: Estrategias legales y técnicas para maximizar el pago justo por parte de su aseguradora."
+        "Specialized Negotiation: Direct adjustment and negotiation of supplements to ensure total project coverage.",
+        "Xactimate Documentation: Preparation of estimates under official industry standards to expedite processes.",
+        "Return Optimization: Legal and technical strategies to maximize fair payment from your insurer."
       ],
       icon: "shield-check",
     }
   ],
   PROCESS: {
-    TITLE: "Nuestra Ruta a Tu Techo Nuevo",
+    TITLE: "Our Route to Your New Roof",
     STEPS: [
-      { num: 1, title: "Inspección", desc: "Evaluamos cada Shingle y accesorio para detectar debilidades estructurales o daños por impacto." },
-      { num: 2, title: "Reclamación", desc: "Te guiamos paso a paso en el proceso con tu seguro, asegurando una cobertura total del proyecto." },
-      { num: 3, title: "Instalación", desc: "Ejecutamos la obra con los más altos estándares de seguridad y calidad en la industria del Roofing." }
+      { num: 1, title: "Inspection", desc: "We evaluate every shingle and accessory to detect structural weaknesses or impact damage." },
+      { num: 2, title: "Claiming", desc: "We guide you step-by-step through the process with your insurance, ensuring total project coverage." },
+      { num: 3, title: "Installation", desc: "We execute the work with the highest standards of safety and quality in the roofing industry." }
     ]
   },
   STORM_SECTION: {
-    TITLE: "Expertos en Daños por Granizo y Viento",
-    DESCRIPTION: "Un impacto de granizo del tamaño de una moneda puede comprometer la integridad de tu techo años antes de que veas una mancha en el techo.",
+    TITLE: "Experts in Hail and Wind Damage",
+    DESCRIPTION: "A hail impact the size of a coin can compromise your roof's integrity years before you see a stain on the ceiling.",
     FEATURES: [
-      "Inspecciones detalladas certificadas",
-      "Asistencia en el proceso de reclamo de seguro",
-      "Reparaciones de emergencia inmediatas"
+      "Certified detailed inspections",
+      "Assistance in the insurance claim process",
+      "Immediate emergency repairs"
     ]
   },
   FAQ: [
-    { q: "¿Cuál es el protocolo de una inspección técnica certificada?", a: "Nuestras inspecciones son 100% gratuitas y sin compromiso. Revisamos minuciosamente el estado de tu techo." },
-    { q: "¿Cómo gestionamos la mediación ante una negativa de la aseguradora?", a: "Contamos con expertos en suplementos que pueden solicitar una re-inspección si consideramos que existen daños legítimos no cubiertos inicialmente." },
-    { q: "¿Qué certificaciones respaldan la calidad de nuestros materiales?", a: "Solo trabajamos con marcas líderes como GAF, Owens Corning y CertainTeed para garantizar la durabilidad a largo plazo." }
+    { q: "What is the protocol for a certified technical inspection?", a: "Our inspections are 100% free and no-obligation. We minutely review the state of your roof." },
+    { q: "How do we manage mediation in case of insurance denial?", a: "We have supplement experts who can request a re-inspection if we believe there is legitimate damage not initially covered." },
+    { q: "What certifications back the quality of our materials?", a: "We only work with leading brands like GAF, Owens Corning, and CertainTeed to guarantee long-term durability." }
   ],
   DETAILED_SERVICES: [
     {
       id: "detail-1",
-      category: "Roofing Exterior",
-      title: "Reemplazo de Techo Completo",
+      category: "Exterior Roofing",
+      title: "Full Roof Replacement",
       image: "/RoofRepair.jpeg",
       copy: [
-        { label: "Garantía de Por Vida", text: "Instalación con materiales de grado premium (Shingles, Metal, Teja) respaldada integralmente." },
-        { label: "Ejecución de Alto Impacto", text: "Proceso profesional completado en un ciclo de 1 a 2 días para minimizar interrupciones." },
-        { label: "Protocolo de Limpieza Total", text: "Limpieza exhaustiva mediante sistemas de recolección de residuos industriales tras la obra." }
+        { label: "Lifetime Warranty", text: "Installation with premium-grade materials (Shingles, Metal, Tile) fully backed." },
+        { label: "High-Impact Execution", text: "Professional process completed in a 1 to 2-day cycle to minimize interruptions." },
+        { label: "Total Cleaning Protocol", text: "Exhaustive cleanup using industrial waste collection systems after the work." }
       ]
     },
     {
       id: "detail-2",
-      category: "Roofing Exterior",
-      title: "Reparaciones Estructurales y de Tejas",
+      category: "Exterior Roofing",
+      title: "Structural and Shingle Repairs",
       image: "/casa2.jpeg",
       copy: [
-        { label: "Intervención Inmediata", text: "Localización y sellado de filtraciones críticas para prevenir daños estructurales mayores." },
-        { label: "Restauración de Tejas", text: "Reemplazo de piezas dañadas o faltantes igualando la estética original." },
-        { label: "Mantenimiento Vulnerable", text: "Revisión y sellado técnico de puntos vulnerables (flashing, chimeneas)." }
+        { label: "Immediate Intervention", text: "Location and sealing of critical leaks to prevent major structural damage." },
+        { label: "Shingle Restoration", text: "Replacement of damaged or missing pieces matching the original aesthetic." },
+        { label: "Vulnerable Point Maintenance", text: "Technical review and sealing of vulnerable points (flashing, chimneys)." }
       ]
     },
     {
       id: "detail-3",
-      category: "Roofing Exterior",
-      title: "Remoción de Árboles de Emergencia",
+      category: "Exterior Roofing",
+      title: "Emergency Tree Removal",
       image: "/stormdamage.jpg",
       copy: [
-        { label: "Extracción de Emergencia", text: "Retiro seguro de árboles caídos o con riesgo de colapso." },
-        { label: "Limpieza Integral", text: "Gestión total de escombros vegetales para despejar áreas de trabajo rápidamente." },
-        { label: "Evaluación de Daños", text: "Informe técnico sobre el impacto estructural para el proceso de seguro." }
+        { label: "Emergency Extraction", text: "Safe removal of fallen trees or those at risk of collapse." },
+        { label: "Comprehensive Cleanup", text: "Total management of vegetable debris to clear workspaces quickly." },
+        { label: "Damage Evaluation", text: "Technical report on structural impact for the insurance process." }
       ]
     },
     {
       id: "detail-roofing",
-      category: "Roofing Exterior",
-      title: "Instalación de Roofing Premium",
+      category: "Exterior Roofing",
+      title: "Premium Roofing Installation",
       image: "/roofing_service.png",
       copy: [
-        { label: "Materiales de Grado Superior", text: "Trabajamos exclusivamente con marcas líderes como GAF, Owens Corning y CertainTeed para garantizar décadas de durabilidad." },
-        { label: "Instalación en 1-2 Días", text: "Equipos certificados que ejecutan el reemplazo completo con la máxima eficiencia para minimiazar las interrupciones a su familia." },
-        { label: "Garantía Integral de Por Vida", text: "Respaldo total del fabricante y de mano de obra que protege su inversión a largo plazo." }
+        { label: "Superior Grade Materials", text: "We work exclusively with leading brands like GAF, Owens Corning, and CertainTeed to guarantee decades of durability." },
+        { label: "Installation in 1-2 Days", text: "Certified teams that execute full replacement with maximum efficiency to minimize family interruptions." },
+        { label: "Comprehensive Lifetime Warranty", text: "Total manufacturer and labor backing that protects your long-term investment." }
       ]
     },
     {
       id: "detail-siding",
-      category: "Roofing Exterior",
-      title: "Instalación de Siding Exterior",
+      category: "Exterior Roofing",
+      title: "Exterior Siding Installation",
       image: "/siding_service.png",
       copy: [
-        { label: "Revestimiento de Alto Rendimiento", text: "Instalación de siding de vinilo, fibrocemento y madera compuesta para una protección superior contra los elementos." },
-        { label: "Aislamiento Térmico Mejorado", text: "El siding moderno añade una capa de aislamiento que reduce las facturas de energía hasta un 20% anualmente." },
-        { label: "Elevación del Valor de Propiedad", text: "Un siding nuevo es una de las renovaciones con mayor retorno de inversión, mejorando el atractivo y la tasación del hogar." }
+        { label: "High-Performance Cladding", text: "Installation of vinyl, fiber cement, and composite wood siding for superior protection against elements." },
+        { label: "Improved Thermal Insulation", text: "Modern siding adds an insulation layer that reduces energy bills up to 20% annually." },
+        { label: "Property Value Elevation", text: "New siding is one of the renovations with the highest ROI, improving home appeal and appraisal." }
       ]
     },
     {
       id: "detail-4",
-      category: "Restauración Post-Tormenta",
-      title: "Diagnóstico y Especialidad en Daños por Viento",
+      category: "Post-Storm Restoration",
+      title: "Wind Damage Diagnosis and Expertise",
       image: "/stormdamage.jpg",
       copy: [
-        { label: "Diagnóstico de Precisión", text: "Inspección técnica certificada y mediante tecnología de drones para detectar daños imperceptibles." },
-        { label: "Asesoría Técnica Preventiva", text: "Estrategias legales y técnicas para fortalecer su hogar ante futuros fenómenos." },
-        { label: "Reporte Técnico Sin Costo", text: "Informe detallado y profesional del estado actual tras el evento." }
+        { label: "Precision Diagnosis", text: "Certified technical inspection using drone technology to detect imperceptible damage." },
+        { label: "Preventive Technical Advisory", text: "Legal and technical strategies to strengthen your home against future phenomena." },
+        { label: "Free Technical Report", text: "Detailed and professional report on the current state after the event." }
       ]
     },
     {
       id: "detail-5",
-      category: "Restauración Post-Tormenta",
-      title: "Mitigación y Restauración de Daños por Agua",
+      category: "Post-Storm Restoration",
+      title: "Water Damage Mitigation and Restoration",
       image: "/water_damage_mitigation_1772813700176.png",
       copy: [
-        { label: "Mitigación de Humedad", text: "Extracción de agua inmediata y deshumidificación industrial para detener el moho." },
-        { label: "Restauración Completa", text: "Reconstrucción técnica de drywall, pisos y techos afectados." },
-        { label: "Tratamiento Antimicrobiano", text: "Protocolos de sanitización profunda para garantizar un entorno seguro." }
+        { label: "Moisture Mitigation", text: "Immediate water extraction and industrial dehumidification to stop mold." },
+        { label: "Full Restoration", text: "Technical reconstruction of affected drywall, floors, and ceilings." },
+        { label: "Antimicrobial Treatment", text: "Deep sanitization protocols to ensure a safe environment." }
       ]
     },
     {
       id: "detail-6",
-      category: "Restauración Post-Tormenta",
-      title: "Gestión de Reclamaciones con Aseguradoras",
+      category: "Post-Storm Restoration",
+      title: "Insurance Claims Management",
       image: "/insurance_consultant_roofing_1772813716640.png",
       copy: [
-        { label: "Negociación Especializada", text: "Ajuste directo de suplementos para asegurar la cobertura total." },
-        { label: "Documentación Xactimate", text: "Elaboración de presupuestos bajo estándares oficiales para agilizar procesos." },
-        { label: "Optimización de Retorno", text: "Estrategias técnicas para maximizar el pago justo por parte de su aseguradora." }
+        { label: "Specialized Negotiation", text: "Direct supplement adjustment to ensure total coverage." },
+        { label: "Xactimate Documentation", text: "Budget preparation under official standards to expedite processes." },
+        { label: "Return Optimization", text: "Technical strategies to maximize fair payment from your insurer." }
       ]
     },
     {
       id: "detail-7",
-      category: "Interiores",
-      title: "Remodelación y Acabados de Interiores",
+      category: "Interiors",
+      title: "Interior Remodeling and Finishes",
       image: "/luxury_interior_remodeling_1772813733659.png",
       copy: [
-        { label: "Renovación Post-Daño", text: "Transformación de espacios dañados en ambientes modernos y estéticamente superiores." },
-        { label: "Acabados de Lujo", text: "Carpintería fina, pintura y acabados de alta gama para revalorizar su hogar." },
-        { label: "Gestión \"Llave en Mano\"", text: "Coordinación total del proyecto, desde el diseño conceptual hasta la entrega final." }
+        { label: "Post-Damage Renovation", text: "Transformation of damaged spaces into modern and aesthetically superior environments." },
+        { label: "Luxury Finishes", text: "Fine carpentry, painting, and high-end finishes to revalue your home." },
+        { label: "Key-in-Hand Management", text: "Total project coordination, from conceptual design to final delivery." }
       ]
     }
   ],
   REVIEWS: [
     {
       name: "John Smith",
-      date: "Hace 2 semanas",
+      date: "2 weeks ago",
       rating: 5,
-      text: "Excelente servicio. Tacurion Restoration hizo un trabajo impecable reemplazando mi techo después de una tormenta. Muy profesionales y puntuales.",
+      text: "Excellent service. Tacurion Restoration did an impeccable job replacing my roof after a storm. Very professional and punctual.",
       initials: "JS"
     },
     {
       name: "Maria Garcia",
-      date: "Hace 1 mes",
+      date: "1 month ago",
       rating: 5,
-      text: "Muy agradecida con el equipo. Se encargaron de todo el proceso con mi seguro y la instalación del siding quedó perfecta. 100% recomendados.",
+      text: "Very grateful to the team. They took care of the whole process with my insurance and the siding installation looked perfect. 100% recommended.",
       initials: "MG"
     },
     {
       name: "Robert Wilson",
-      date: "Hace 2 meses",
+      date: "2 months ago",
       rating: 5,
-      text: "Profesionalismo desde la primera inspección. El equipo de Roofing es muy eficiente y dejaron todo impecable al terminar. Gran calidad de materiales.",
+      text: "Professionalism from the first inspection. The roofing team is very efficient and left everything spotless at the end. Great quality materials.",
       initials: "RW"
     }
   ]

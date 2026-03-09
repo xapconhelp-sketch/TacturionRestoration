@@ -28,6 +28,7 @@ import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { CONTENT } from './content';
 import DetailedServicesPage from './DetailedServicesPage';
+import InsuranceClaimPage from './InsuranceClaimPage';
 
 /* ─── Animation Variants ─── */
 const fadeUp = {
@@ -59,13 +60,20 @@ function Header() {
       <motion.div className="scroll-bar" style={{ scaleX }} />
       <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
         {/* Logo Hanging from the very edge of the Header */}
-        <Link to="/" style={{ position: 'absolute', top: '0.5rem', left: '2.5rem', zIndex: 1001 }}>
+        <Link to="/" style={{
+          position: 'absolute',
+          top: scrolled ? '50%' : '100%',
+          transform: scrolled ? 'translateY(-50%)' : 'none',
+          left: '2.5rem',
+          zIndex: 1001,
+          transition: 'all 0.4s var(--ease)'
+        }}>
           <motion.div
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              padding: '0.5rem',
+              padding: scrolled ? '0' : '0.5rem',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -76,38 +84,38 @@ function Header() {
               src="/logopng.png"
               alt="Tacurion Logo"
               style={{
-                height: scrolled ? '60px' : '115px',
+                height: scrolled ? '50px' : 'clamp(90px, 20vw, 150px)',
                 width: 'auto',
-                transition: 'height 0.4s var(--ease)',
+                transition: 'all 0.4s var(--ease)',
                 filter: scrolled ? 'none' : 'drop-shadow(0 5px 15px rgba(0,0,0,0.3))'
               }}
             />
           </motion.div>
         </Link>
 
-        <div className="container flex items-center justify-between" style={{ position: 'relative' }}>
+        <div className="container flex items-center justify-between" style={{ position: 'relative', width: '100%' }}>
           {/* Spacer to avoid overlap with the absolute positioned logo on the left */}
-          <div style={{ width: scrolled ? '120px' : '180px', transition: 'width 0.4s var(--ease)' }} className="hidden md:block"></div>
+          <div style={{ width: scrolled ? '100px' : '140px', transition: 'width 0.4s var(--ease)', flexShrink: 0 }} className="hidden md:block"></div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center justify-center gap-5 lg:gap-10" style={{ flex: 1 }}>
             {CONTENT.NAV.map(n => (
               n.path.startsWith('/#') ?
-                <a key={n.path} href={n.path} className="nav-link">{n.label}</a> :
-                <Link key={n.path} to={n.path} className="nav-link">{n.label}</Link>
+                <a key={n.path} href={n.path} className="nav-link" style={{ color: scrolled ? 'var(--black)' : '#fff', textShadow: scrolled ? 'none' : '0 1px 4px rgba(0,0,0,0.4)', whiteSpace: 'nowrap' }}>{n.label}</a> :
+                <Link key={n.path} to={n.path} className="nav-link" style={{ color: scrolled ? 'var(--black)' : '#fff', textShadow: scrolled ? 'none' : '0 1px 4px rgba(0,0,0,0.4)', whiteSpace: 'nowrap' }}>{n.label}</Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="flex items-center gap-2 nav-link">
+          <div className="hidden md:flex items-center justify-end gap-3 lg:gap-4" style={{ flexShrink: 0 }}>
+            <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="flex items-center gap-2 nav-link" style={{ color: scrolled ? 'var(--black)' : '#fff', textShadow: scrolled ? 'none' : '0 1px 4px rgba(0,0,0,0.4)', whiteSpace: 'nowrap' }}>
               <Phone size={14} /> {CONTENT.CONTACT.PHONE}
             </a>
-            <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '0.6rem 1.5rem', minHeight: '40px', fontSize: '0.75rem' }}>Consulta Gratis</a>
+            <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '0.6rem 1.5rem', minHeight: '40px', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>Free Consultation</a>
           </div>
 
           {/* Mobile Drawer Toggle */}
           <div className="md:hidden flex items-center justify-end w-full">
-            <button style={{ color: 'var(--black)' }} onClick={() => setOpen(true)}>
+            <button style={{ color: scrolled ? 'var(--black)' : '#fff' }} onClick={() => setOpen(true)}>
               <Menu size={28} />
             </button>
           </div>
@@ -126,7 +134,7 @@ function Header() {
             <motion.aside
               initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 250 }}
-              style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: 320, background: 'var(--surface)', zIndex: 2000, padding: '2rem', borderLeft: '1px solid var(--border)', display: 'flex', flexDirection: 'column' }}
+              style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: 320, maxWidth: '100vw', background: 'var(--black)', color: '#fff', zIndex: 2000, padding: '2rem', borderLeft: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column' }}
             >
               <div className="flex justify-between items-center" style={{ marginBottom: '3rem' }}>
                 <div></div>
@@ -135,14 +143,14 @@ function Header() {
               <div className="flex-col gap-6" style={{ display: 'flex', flex: 1 }}>
                 {CONTENT.NAV.map(n => (
                   n.path.startsWith('/#') ?
-                    <a key={n.path} href={n.path} onClick={() => setOpen(false)} style={{ fontSize: '1.4rem', fontFamily: 'var(--font-display)', fontWeight: 700 }}>{n.label}</a> :
-                    <Link key={n.path} to={n.path} onClick={() => setOpen(false)} style={{ fontSize: '1.4rem', fontFamily: 'var(--font-display)', fontWeight: 700 }}>{n.label}</Link>
+                    <a key={n.path} href={n.path} onClick={() => setOpen(false)} style={{ fontSize: '1.4rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#fff' }}>{n.label}</a> :
+                    <Link key={n.path} to={n.path} onClick={() => setOpen(false)} style={{ fontSize: '1.4rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#fff' }}>{n.label}</Link>
                 ))}
               </div>
               <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="flex items-center gap-3 gray" style={{ fontSize: '0.9rem' }}><Phone size={16} className="gold" /> {CONTENT.CONTACT.PHONE}</div>
                 <div className="flex items-center gap-3 gray" style={{ fontSize: '0.9rem' }}><Mail size={16} className="gold" /> {CONTENT.CONTACT.EMAIL}</div>
-                <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold w-full justify-center" style={{ marginTop: '0.5rem' }}>Llamar Ahora</a>
+                <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold w-full justify-center" style={{ marginTop: '0.5rem' }}>Call Now</a>
               </div>
             </motion.aside>
           </>
@@ -179,8 +187,8 @@ function Hero() {
               </motion.div>
 
               <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', marginTop: '32px', marginBottom: '32px', fontWeight: 900, maxWidth: '1000px', lineHeight: 1.1, color: '#fff' }}>
-                Tu <span style={{ color: 'var(--gold)' }}>Techo</span> es Nuestra{' '}
-                <span style={{ fontStyle: 'italic' }}>Prioridad</span>
+                Your <span style={{ color: 'var(--gold)' }}>Roof</span> is Our{' '}
+                <span style={{ fontStyle: 'italic' }}>Priority</span>
               </motion.h1>
 
               <motion.p variants={fadeUp} custom={2} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', maxWidth: 650, lineHeight: 1.7, marginBottom: '48px', color: 'rgba(255,255,255,0.7)' }}>
@@ -192,16 +200,16 @@ function Hero() {
                   {CONTENT.HERO.CTA} <ChevronRight size={18} />
                 </a>
                 <Link to="/servicios" className="btn" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', padding: '1.2rem 3rem' }}>
-                  Nuestros Servicios
+                  Our Services
                 </Link>
               </motion.div>
 
               {/* Stats Row */}
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-12 mt-12 justify-center" style={{ paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.1)', width: '100%' }}>
                 {[
-                  { num: '500+', label: 'Proyectos' },
-                  { num: '15+', label: 'Años Exp.' },
-                  { num: '100%', label: 'Garantía' }
+                  { num: '500+', label: 'Projects' },
+                  { num: '15+', label: 'Years Exp.' },
+                  { num: '100%', label: 'Warranty' }
                 ].map((s, i) => (
                   <div key={i} className="text-center">
                     <div className="stat-num">{s.num}</div>
@@ -222,10 +230,10 @@ function Hero() {
    ═══════════════════════════════════════════ */
 function TrustBar() {
   const items = [
-    { icon: Zap, title: "Respuesta 24/7", desc: "Emergencias atendidas al instante" },
-    { icon: Award, title: "Certificados GAF", desc: "Materiales de grado premium" },
-    { icon: ShieldCheck, title: "Seguros Expertos", desc: "Maximizamos tu cobertura" },
-    { icon: Users, title: "500+ Familias", desc: "Confían en nuestro trabajo" },
+    { icon: Zap, title: "24/7 Response", desc: "Emergencies attended instantly" },
+    { icon: Award, title: "GAF Certified", desc: "Premium grade materials" },
+    { icon: ShieldCheck, title: "Insurance Experts", desc: "Maximizing your coverage" },
+    { icon: Users, title: "500+ Families", desc: "Trust our work" },
   ];
 
   return (
@@ -263,10 +271,10 @@ function Services() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center" style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
           <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '1.5rem' }} />
           <motion.p variants={fadeUp} className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem' }}>
-            Nuestros Servicios
+            Our Services
           </motion.p>
           <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-            Excelencia en Cada Proyecto
+            Excellence in Every Project
           </motion.h2>
         </motion.div>
 
@@ -382,7 +390,7 @@ function Process() {
       <div className="container">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center" style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
           <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '1.5rem' }} />
-          <motion.p variants={fadeUp} className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem' }}>Proceso Transparente</motion.p>
+          <motion.p variants={fadeUp} className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem' }}>Transparent Process</motion.p>
           <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>{CONTENT.PROCESS.TITLE}</motion.h2>
         </motion.div>
 
@@ -416,7 +424,7 @@ function FAQ() {
       <div className="container" style={{ maxWidth: 780 }}>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center" style={{ marginBottom: 'clamp(3rem, 5vw, 4rem)' }}>
           <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '1.5rem' }} />
-          <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>Preguntas Frecuentes</motion.h2>
+          <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>Frequently Asked Questions</motion.h2>
         </motion.div>
 
         <div className="flex-col gap-3" style={{ display: 'flex' }}>
@@ -464,10 +472,10 @@ function Reviews() {
       <div className="container">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center" style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
           <motion.div variants={fadeUp} className="divider mx-auto" style={{ marginBottom: '1.5rem' }} />
-          <motion.p variants={fadeUp} className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem' }}>Reseñas de Clientes</motion.p>
-          <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>Lo Que Dicen Nuestros Clientes</motion.h2>
+          <motion.p variants={fadeUp} className="gold" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem' }}>Customer Reviews</motion.p>
+          <motion.h2 variants={fadeUp} style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>What Our Clients Say</motion.h2>
           <motion.p variants={fadeUp} className="gray" style={{ marginTop: '1.5rem', maxWidth: '600px', margin: '1.5rem auto 0' }}>
-            Nuestra reputación se basa en la satisfacción de cada propietario. Mira por qué nos eligen en Massachusetts.
+            Our reputation is built on every homeowner's satisfaction. See why they choose us in Massachusetts.
           </motion.p>
         </motion.div>
 
@@ -516,7 +524,7 @@ function Reviews() {
             className="btn btn-ghost"
             style={{ padding: '0 2.5rem' }}
           >
-            Ver más en Google <ArrowRight size={18} />
+            See more on Google <ArrowRight size={18} />
           </a>
         </motion.div>
       </div>
@@ -540,7 +548,7 @@ function Footer() {
               </div>
             </div>
             <p className="gray" style={{ fontSize: '0.9rem', lineHeight: 1.7, maxWidth: 300 }}>
-              Especialistas certificados en restauración de techos y gestión de seguros en Massachusetts.
+              Certified specialists in roof restoration and insurance management in Massachusetts.
             </p>
             <div className="flex gap-3" style={{ marginTop: '1.5rem' }}>
               {[Facebook, Instagram].map((Icon, i) => (
@@ -553,7 +561,7 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gray-500)', marginBottom: '1.5rem' }}>Navegación</h4>
+            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gray-500)', marginBottom: '1.5rem' }}>Navigation</h4>
             <div className="flex-col gap-3" style={{ display: 'flex', lineHeight: 2.0 }}>
               {CONTENT.NAV.map(n => (
                 n.path.startsWith('/#') ?
@@ -565,12 +573,12 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gray-500)', marginBottom: '1.5rem' }}>Contacto</h4>
+            <h4 style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gray-500)', marginBottom: '1.5rem' }}>Contact</h4>
             <div className="flex-col gap-4" style={{ display: 'flex', lineHeight: 2.0 }}>
               <a href="tel:(508) 617-3041" className="flex items-center gap-3 footer-link" style={{ color: 'inherit' }}>
                 <div className="icon-box" style={{ width: 36, height: 36, borderRadius: 8 }}><Phone size={16} /></div>
                 <div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', lineHeight: 1 }}>Teléfono</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', lineHeight: 1 }}>Phone</div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{CONTENT.CONTACT.PHONE}</div>
                 </div>
               </a>
@@ -584,7 +592,7 @@ function Footer() {
               <div className="flex items-start gap-3">
                 <div className="icon-box" style={{ width: 36, height: 36, borderRadius: 8, marginTop: 2 }}><MapPin size={16} /></div>
                 <div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', lineHeight: 1 }}>Oficina</div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', lineHeight: 1 }}>Office</div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{CONTENT.CONTACT.ADDRESS}</div>
                 </div>
               </div>
@@ -596,8 +604,8 @@ function Footer() {
         <div className="flex justify-between items-center flex-wrap gap-4" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
           <span>© {new Date().getFullYear()} Tacurion Restoration LLC. All rights reserved.</span>
           <div className="flex gap-6">
-            <a href="#" className="footer-link" style={{ fontSize: '0.75rem' }}>Privacidad</a>
-            <a href="#" className="footer-link" style={{ fontSize: '0.75rem' }}>Términos</a>
+            <a href="#" className="footer-link" style={{ fontSize: '0.75rem' }}>Privacy</a>
+            <a href="#" className="footer-link" style={{ fontSize: '0.75rem' }}>Terms</a>
           </div>
         </div>
       </div>
@@ -649,9 +657,9 @@ function ContactModal({ isOpen, onClose }) {
         </div>
 
         <div className="text-center">
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.3rem', color: '#000', fontFamily: 'var(--font-display)' }}>Envíanos un mensaje</h3>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.3rem', color: '#000', fontFamily: 'var(--font-display)' }}>Send us a message</h3>
           <p style={{ fontSize: '0.85rem', lineHeight: 1.5, color: '#404040' }}>
-            Déjanos saber qué necesitas y te contactaremos a la brevedad posible.
+            Let us know what you need and we will contact you as soon as possible.
           </p>
         </div>
 
@@ -659,37 +667,37 @@ function ContactModal({ isOpen, onClose }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }}>
             <div style={{ position: 'relative' }}>
               <User size={14} color="#808080" style={{ position: 'absolute', top: '12px', left: '12px' }} />
-              <input type="text" placeholder="Nombre*" required style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem' }} />
+              <input type="text" placeholder="First Name*" required style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem' }} />
             </div>
             <div style={{ position: 'relative' }}>
               <User size={14} color="#808080" style={{ position: 'absolute', top: '12px', left: '12px' }} />
-              <input type="text" placeholder="Apellido*" required style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem' }} />
+              <input type="text" placeholder="Last Name*" required style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem' }} />
             </div>
           </div>
 
           <div style={{ position: 'relative' }}>
             <Smartphone size={14} color="#808080" style={{ position: 'absolute', top: '12px', left: '12px' }} />
-            <input type="tel" placeholder="Número de Teléfono*" required style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem' }} />
+            <input type="tel" placeholder="Phone Number*" required style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem' }} />
           </div>
 
           <label className="flex items-start gap-2" style={{ cursor: 'pointer', background: '#fcfcfc', padding: '0.6rem', borderRadius: '6px', border: '1px solid #f0f0f0' }}>
             <input type="checkbox" required style={{ width: '16px', height: '16px', accentColor: 'var(--gold)', cursor: 'pointer', marginTop: '2px', flexShrink: 0 }} />
             <span style={{ fontSize: '0.75rem', lineHeight: 1.4, color: '#404040' }}>
-              Sí, acepto recibir mensajes de texto o llamadas a este número.
+              Yes, I agree to receive text messages or calls to this number.
             </span>
           </label>
 
           <div style={{ position: 'relative' }}>
             <MessageCircle size={14} color="#808080" style={{ position: 'absolute', top: '12px', left: '12px' }} />
-            <textarea placeholder="Mensaje*" required rows={3} style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem', resize: 'vertical' }} />
+            <textarea placeholder="Message*" required rows={3} style={{ width: '100%', padding: '10px 10px 10px 32px', background: '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '6px', color: '#000', fontSize: '0.85rem', resize: 'vertical' }} />
           </div>
 
           <p style={{ fontSize: '0.65rem', color: '#808080', textAlign: 'center', margin: '0 0' }}>
-            Al enviar este formulario, aceptas nuestra Política de privacidad.
+            By submitting this form, you agree to our Privacy Policy.
           </p>
 
           <button type="submit" className="btn" style={{ background: 'var(--gold)', color: '#000', width: '100%', justifyContent: 'center', padding: '0.8rem', fontSize: '0.9rem', borderRadius: '6px', fontWeight: 700 }}>
-            Enviar Mensaje
+            Send Message
           </button>
         </form>
       </motion.div>
@@ -700,7 +708,7 @@ function ContactModal({ isOpen, onClose }) {
 function FloatingContactMenu({ onOpenTextModal }) {
   const cleanPhone = CONTENT.CONTACT.PHONE.replace(/\D/g, '');
   const items = [
-    { label: 'Chat', icon: MessageCircle, action: () => window.open(`https://wa.me/1${cleanPhone}?text=${encodeURIComponent('Hola Tacurion Restoration, me gustaría solicitar una inspección gratuita para mi propiedad.')}`, '_blank') },
+    { label: 'Chat', icon: MessageCircle, action: () => window.open(`https://wa.me/1${cleanPhone}?text=${encodeURIComponent('Hello Tacurion Restoration, I would like to request a free inspection for my property.')}`, '_blank') },
     { label: 'Call', icon: Phone, action: () => window.location.href = `tel:${cleanPhone}` },
     { label: 'Text', icon: Smartphone, action: onOpenTextModal },
     { label: 'Email', icon: Mail, action: onOpenTextModal }
@@ -765,6 +773,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/servicios" element={<DetailedServicesPage />} />
+        <Route path="/insurance-claim" element={<InsuranceClaimPage />} />
       </Routes>
       <Footer />
 
