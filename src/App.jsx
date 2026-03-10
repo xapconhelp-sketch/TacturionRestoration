@@ -361,9 +361,9 @@ function Legacy() {
               boxShadow: '0 20px 50px rgba(0,0,0,0.06)'
             }}>
               <img
-                src="/Recurso10@3x-8.png"
-                alt="Tacurion Restoration Logo"
-                style={{ maxWidth: '320px', width: '100%', height: 'auto', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }}
+                src="/Mockups1.png"
+                alt="Tacurion Restoration Mockup"
+                style={{ maxWidth: '100%', width: '100%', height: 'auto' }}
               />
             </div>
           </motion.div>
