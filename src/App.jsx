@@ -81,7 +81,7 @@ function Header() {
             }}
           >
             <img
-              src="/logopng.png"
+              src="/Recurso10@3x-8.png"
               alt="Tacurion Logo"
               style={{
                 height: scrolled ? '50px' : 'clamp(90px, 20vw, 150px)',
@@ -334,7 +334,7 @@ function Legacy() {
               boxShadow: '0 20px 50px rgba(0,0,0,0.06)'
             }}>
               <img
-                src="/logopng.png"
+                src="/Recurso10@3x-8.png"
                 alt="Tacurion Restoration Logo"
                 style={{ maxWidth: '320px', width: '100%', height: 'auto', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }}
               />
@@ -544,7 +544,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-3" style={{ marginBottom: '1.5rem' }}>
               <div style={{ display: 'inline-flex' }}>
-                <img src="/logopng.png" alt="Tacurion Restoration Logo" style={{ height: '60px', width: 'auto' }} />
+                <img src="/Recurso10@3x-8.png" alt="Tacurion Restoration Logo" style={{ height: '60px', width: 'auto' }} />
               </div>
             </div>
             <p className="gray" style={{ fontSize: '0.9rem', lineHeight: 1.7, maxWidth: 300 }}>
@@ -653,7 +653,7 @@ function ContactModal({ isOpen, onClose }) {
 
         {/* Logo */}
         <div className="flex justify-center mb-1">
-          <img src="/logopng.png" alt="Tacurion Logo" style={{ height: '50px', width: 'auto' }} />
+          <img src="/Recurso10@3x-8.png" alt="Tacurion Logo" style={{ height: '50px', width: 'auto' }} />
         </div>
 
         <div className="text-center">
