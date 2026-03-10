@@ -15,6 +15,11 @@ export const CONTENT = {
     ADDRESS: "50 Tecumseh St, Fall River, MA. 02721",
     HOURS: "24/7 Emergency Services | Mon-Sat: 8AM-6PM",
   },
+  SOCIAL: {
+    TIKTOK: "https://www.tiktok.com/@tacurion_restorationllc",
+    FACEBOOK: "https://www.facebook.com/tacurionrestorationllc",
+    INSTAGRAM: "https://www.instagram.com/tacurion_restoration_llc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+  },
   NAV: [
     { label: "Home", path: "/" },
     { label: "Our Services", path: "/servicios" },

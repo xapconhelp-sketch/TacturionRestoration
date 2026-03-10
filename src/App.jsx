@@ -30,6 +30,22 @@ import { CONTENT } from './content';
 import DetailedServicesPage from './DetailedServicesPage';
 import InsuranceClaimPage from './InsuranceClaimPage';
 
+// Custom TikTok icon since old versions of lucide-react might not have it
+const TikTok = ({ size = 24, color = "currentColor" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
+
 /* ─── Animation Variants ─── */
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -150,6 +166,17 @@ function Header() {
               <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="flex items-center gap-3 gray" style={{ fontSize: '0.9rem' }}><Phone size={16} className="gold" /> {CONTENT.CONTACT.PHONE}</div>
                 <div className="flex items-center gap-3 gray" style={{ fontSize: '0.9rem' }}><Mail size={16} className="gold" /> {CONTENT.CONTACT.EMAIL}</div>
+                <div className="flex gap-4 mt-2">
+                  {[
+                    { Icon: Facebook, link: CONTENT.SOCIAL.FACEBOOK },
+                    { Icon: Instagram, link: CONTENT.SOCIAL.INSTAGRAM },
+                    { Icon: TikTok, link: CONTENT.SOCIAL.TIKTOK }
+                  ].map((item, i) => (
+                    <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" style={{ width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(197, 160, 89, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#C5A059' }}>
+                      <item.Icon size={18} />
+                    </a>
+                  ))}
+                </div>
                 <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold w-full justify-center" style={{ marginTop: '0.5rem' }}>Call Now</a>
               </div>
             </motion.aside>
@@ -551,9 +578,13 @@ function Footer() {
               Certified specialists in roof restoration and insurance management in Massachusetts.
             </p>
             <div className="flex gap-3" style={{ marginTop: '1.5rem' }}>
-              {[Facebook, Instagram].map((Icon, i) => (
-                <a key={i} href="#" style={{ width: 40, height: 40, borderRadius: 10, border: '1px solid rgba(197, 160, 89, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#C5A059', transition: '0.3s' }}>
-                  <Icon size={18} />
+              {[
+                { Icon: Facebook, link: CONTENT.SOCIAL.FACEBOOK },
+                { Icon: Instagram, link: CONTENT.SOCIAL.INSTAGRAM },
+                { Icon: TikTok, link: CONTENT.SOCIAL.TIKTOK }
+              ].map((item, i) => (
+                <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" style={{ width: 40, height: 40, borderRadius: 10, border: '1px solid rgba(197, 160, 89, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#C5A059', transition: '0.3s' }}>
+                  <item.Icon size={18} />
                 </a>
               ))}
             </div>
