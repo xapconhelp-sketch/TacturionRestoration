@@ -81,7 +81,7 @@ function Header() {
             }}
           >
             <img
-              src="/Recurso10@3x-8.png"
+              src={scrolled ? "/Recurso12@3x-8.png" : "/Recurso10@3x-8.png"}
               alt="Tacurion Logo"
               style={{
                 height: scrolled ? '50px' : 'clamp(90px, 20vw, 150px)',
