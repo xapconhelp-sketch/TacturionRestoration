@@ -13,7 +13,7 @@ import {
   Menu,
   X,
   Star,
-  CheckCircle2,
+  Check,
   HardHat,
   Zap,
   Award,
@@ -100,7 +100,7 @@ function Header() {
               src={scrolled ? "/Recurso12@3x-8.png" : "/Recurso10@3x-8.png"}
               alt="Tacurion Logo"
               style={{
-                height: scrolled ? '50px' : 'clamp(90px, 20vw, 150px)',
+                height: scrolled ? '50px' : 'clamp(100px, 20vw, 160px)',
                 width: 'auto',
                 transition: 'all 0.4s var(--ease)',
                 filter: scrolled ? 'none' : 'drop-shadow(0 5px 15px rgba(0,0,0,0.3))'
@@ -201,7 +201,7 @@ function Hero() {
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
         {/* Dark cinematic overlay */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(18,18,18,0.8) 0%, rgba(18,18,18,0.92) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(18,18,18,0.85) 0%, rgba(18,18,18,0.95) 100%)' }} />
       </div>
 
       <div className="container relative" style={{ zIndex: 10, width: '100%' }}>
@@ -326,7 +326,7 @@ function Services() {
                 <div style={{ borderTop: s.description ? '1px solid var(--border)' : 'none', paddingTop: s.description ? '1.5rem' : '0', flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {s.features.map((f, idx) => (
                     <div key={idx} className="feature-row">
-                      <CheckCircle2 size={18} className="gold" style={{ marginTop: '0.15rem', flexShrink: 0 }} />
+                      <Check size={18} className="gold" style={{ marginTop: '0.15rem', flexShrink: 0 }} />
                       <span>{f}</span>
                     </div>
                   ))}
@@ -566,7 +566,7 @@ function Footer() {
   return (
     <footer className="section section-dark" style={{ paddingBottom: '2rem' }}>
       <div className="container">
-        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-16" style={{ marginBottom: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--border)' }}>
+        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8" style={{ marginBottom: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--border)' }}>
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3" style={{ marginBottom: '1.5rem' }}>

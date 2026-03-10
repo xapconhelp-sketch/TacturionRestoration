@@ -106,7 +106,7 @@ ul {
 
 /* ── Layout ── */
 .container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
@@ -362,8 +362,7 @@ ul {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.9rem 2rem;
-  border-radius: 8px;
-  /* 8px radius from request */
+  border-radius: 6px;
   min-height: 48px;
   cursor: pointer;
   transition: all 0.35s var(--ease);
@@ -564,13 +563,13 @@ ul {
 /* ── Footer ── */
 .footer-link {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .footer-link:hover {
-  color: var(--gold);
+  color: #ffffff;
 }
 
 /* ── Section Themes ── */
@@ -580,8 +579,8 @@ ul {
 }
 
 .section-dark .card {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #1A1A1A;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-dark .card:hover {

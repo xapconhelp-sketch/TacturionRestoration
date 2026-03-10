@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Phone, Mail, ArrowRight, ChevronRight } from 'lucide-react';
+import { Check, Phone, Mail, ArrowRight, ChevronRight } from 'lucide-react';
 import { CONTENT } from './content';
 
 const fadeUp = {
@@ -25,10 +25,10 @@ export function CTA() {
                     Schedule your free inspection today and protect your biggest investment with Massachusetts' restoration experts.
                 </p>
                 <div className="flex justify-center flex-wrap gap-5">
-                    <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn" style={{ background: 'var(--gold)', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn" style={{ background: 'var(--gold)', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '6px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <Phone size={20} /> Call Now
                     </a>
-                    <a href="#contact" className="btn" style={{ background: 'transparent', border: '2px solid #fff', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <a href="#contact" className="btn" style={{ background: 'transparent', border: '2px solid #fff', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '6px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <Mail size={20} /> Send Email
                     </a>
                 </div>
@@ -131,7 +131,7 @@ export default function DetailedServicesPage() {
                                                     flexShrink: 0,
                                                     border: '1px solid rgba(197, 160, 89, 0.2)'
                                                 }}>
-                                                    <CheckCircle2 size={24} color="var(--gold)" />
+                                                    <Check size={24} color="var(--gold)" />
                                                 </div>
                                                 <div>
                                                     <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--black)' }}>
