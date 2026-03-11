@@ -69,7 +69,7 @@ export const CONTENT = {
       title: "Storm Damage Specialists",
       description: "",
       features: [
-        "Precision Diagnosis: Technical inspection using drone technology to detect subtle damage invisible to the naked eye.",
+        "On-Roof Assessment: Exhaustive physical inspection by climbing onto your roof to detect subtle damage invisible from the ground.",
         "Free Technical Report: Detailed and professional report on the current state of your roof after the weather event.",
         "Preventive Technical Advisory: Strategic planning to strengthen your home against future natural phenomena."
       ],
@@ -171,7 +171,7 @@ export const CONTENT = {
       title: "Wind Damage Diagnosis and Expertise",
       image: "/stormdamage.jpg",
       copy: [
-        { label: "Precision Diagnosis", text: "Certified technical inspection using drone technology to detect imperceptible damage." },
+        { label: "On-Roof Assessment", text: "Exhaustive physical inspection by climbing onto your roof to detect damage invisible from the ground." },
         { label: "Preventive Technical Advisory", text: "Legal and technical strategies to strengthen your home against future phenomena." },
         { label: "Free Technical Report", text: "Detailed and professional report on the current state after the event." }
       ]
