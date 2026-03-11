@@ -545,7 +545,7 @@ function Reviews() {
           className="text-center" style={{ marginTop: '4rem' }}
         >
           <a
-            href="https://www.google.com/search?q=Tacurion+Restoration+LLC+reviews"
+            href={CONTENT.SOCIAL.GOOGLE_REVIEWS}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-ghost"
@@ -620,13 +620,19 @@ function Footer() {
                   <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{CONTENT.CONTACT.EMAIL}</div>
                 </div>
               </a>
-              <div className="flex items-start gap-3">
+              <a 
+                href={CONTENT.SOCIAL.GOOGLE_MAPS} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-start gap-3 footer-link" 
+                style={{ color: 'inherit' }}
+              >
                 <div className="icon-box" style={{ width: 36, height: 36, borderRadius: 8, marginTop: 2 }}><MapPin size={16} /></div>
                 <div>
                   <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', lineHeight: 1 }}>Office</div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{CONTENT.CONTACT.ADDRESS}</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

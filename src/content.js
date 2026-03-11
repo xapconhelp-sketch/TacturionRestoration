@@ -18,7 +18,9 @@ export const CONTENT = {
   SOCIAL: {
     TIKTOK: "https://www.tiktok.com/@tacurion_restorationllc",
     FACEBOOK: "https://www.facebook.com/tacurionrestorationllc",
-    INSTAGRAM: "https://www.instagram.com/tacurion_restoration_llc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    INSTAGRAM: "https://www.instagram.com/tacurion_restoration_llc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    GOOGLE_MAPS: "https://maps.app.goo.gl/F5C3udGeo52acE1K8",
+    GOOGLE_REVIEWS: "https://g.page/r/CQe8sApxXh8vEAI/review"
   },
   NAV: [
     { label: "Home", path: "/" },
