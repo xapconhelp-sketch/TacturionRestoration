@@ -12,7 +12,7 @@ const stagger = {
     visible: { transition: { staggerChildren: 0.1 } }
 };
 
-export function CTA() {
+export function CTA({ onOpenModal }) {
     return (
         <section className="section" style={{ background: 'var(--black)', position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
             {/* Decorative Circle */}
@@ -25,19 +25,19 @@ export function CTA() {
                     Schedule your free inspection today and protect your biggest investment with Massachusetts' restoration experts.
                 </p>
                 <div className="flex justify-center flex-wrap gap-5">
-                    <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn" style={{ background: 'var(--gold)', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '6px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <Phone size={20} /> Call Now
-                    </a>
-                    <a href="#contact" className="btn" style={{ background: 'transparent', border: '2px solid #fff', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '6px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <button onClick={onOpenModal} className="btn" style={{ background: 'var(--gold)', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '6px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>
+                        <Mail size={20} /> Request Information
+                    </button>
+                    <button onClick={onOpenModal} className="btn" style={{ background: 'transparent', border: '2px solid #fff', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '6px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', fontFamily: 'inherit' }}>
                         <Mail size={20} /> Send Email
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
     );
 }
 
-export default function DetailedServicesPage() {
+export default function DetailedServicesPage({ onOpenModal }) {
     return (
         <div style={{ background: 'var(--surface)', color: 'var(--black)' }}>
             {/* Hero / Header for Services */}
@@ -146,9 +146,9 @@ export default function DetailedServicesPage() {
                                     </div>
 
                                     <motion.div variants={fadeUp} style={{ marginTop: '3rem' }}>
-                                        <a href={`tel:${CONTENT.CONTACT.PHONE.replace(/\D/g, '')}`} className="btn btn-gold" style={{ padding: '0 2.5rem' }}>
+                                        <button onClick={onOpenModal} className="btn btn-gold" style={{ padding: '0 2.5rem', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 'bold' }}>
                                             Request Information <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-                                        </a>
+                                        </button>
                                     </motion.div>
                                 </motion.div>
                             </div>
@@ -158,7 +158,7 @@ export default function DetailedServicesPage() {
             </section>
 
             {/* Final CTA */}
-            <CTA />
+            <CTA onOpenModal={onOpenModal} />
         </div>
     );
 }
