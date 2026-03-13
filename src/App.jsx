@@ -22,7 +22,10 @@ import {
   ChevronDown,
   MessageCircle,
   Smartphone,
-  User
+  User,
+  Droplets,
+  TreePine,
+  Wrench
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
@@ -54,7 +57,7 @@ const fadeUp = {
 
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
-const ICONS = { "home": Home, "cloud-lightning": CloudLightning, "shield-check": ShieldCheck };
+const ICONS = { "home": Home, "cloud-lightning": CloudLightning, "shield-check": ShieldCheck, "droplets": Droplets, "tree-pine": TreePine, "wrench": Wrench };
 
 /* ═══════════════════════════════════════════
    HEADER
@@ -197,7 +200,7 @@ const HERO_SLIDES = [
   { src: '/roofing_service.png', label: 'Certified Roofing', caption: 'Expert installation since 2009' },
   { src: '/stormdamage.jpg', label: 'Storm Damage', caption: 'We document every inch of damage' },
   { src: '/RoofRepair.jpeg', label: 'Roof Repair', caption: 'Precision repairs, lifetime warranty' },
-  { src: '/water_damage_mitigation_1772813700176.png', label: 'Water Mitigation', caption: 'Fast response, full restoration' },
+  { src: '/water_damage_mitigation.png', label: 'Water Mitigation', caption: 'Fast response, full restoration' },
 ];
 
 function Hero() {
@@ -376,6 +379,9 @@ function TrustBar() {
    ═══════════════════════════════════════════ */
 function Services() {
   const accents = [
+    { grad: 'linear-gradient(135deg,rgba(197,160,89,0.1) 0%,rgba(197,160,89,0.02) 100%)', glow: 'rgba(197,160,89,0.18)', top: 'rgba(197,160,89,0.5)' },
+    { grad: 'linear-gradient(135deg,rgba(80,140,255,0.07) 0%,rgba(80,140,255,0.01) 100%)', glow: 'rgba(80,140,255,0.14)', top: 'rgba(80,140,255,0.45)' },
+    { grad: 'linear-gradient(135deg,rgba(100,210,130,0.07) 0%,rgba(100,210,130,0.01) 100%)', glow: 'rgba(100,210,130,0.14)', top: 'rgba(100,210,130,0.45)' },
     { grad: 'linear-gradient(135deg,rgba(197,160,89,0.1) 0%,rgba(197,160,89,0.02) 100%)', glow: 'rgba(197,160,89,0.18)', top: 'rgba(197,160,89,0.5)' },
     { grad: 'linear-gradient(135deg,rgba(80,140,255,0.07) 0%,rgba(80,140,255,0.01) 100%)', glow: 'rgba(80,140,255,0.14)', top: 'rgba(80,140,255,0.45)' },
     { grad: 'linear-gradient(135deg,rgba(100,210,130,0.07) 0%,rgba(100,210,130,0.01) 100%)', glow: 'rgba(100,210,130,0.14)', top: 'rgba(100,210,130,0.45)' },

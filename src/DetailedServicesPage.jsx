@@ -70,7 +70,7 @@ export default function DetailedServicesPage() {
                                     display: 'grid',
                                     gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                                     gap: 'clamp(3rem, 8vw, 6rem)',
-                                    alignItems: 'stretch', // Changed from center to stretch
+                                    alignItems: 'center', // Changed back to center for consistent sizing
                                     marginBottom: '160px',
                                     padding: '96px 0'
                                 }}
@@ -81,14 +81,14 @@ export default function DetailedServicesPage() {
                                     whileInView="visible"
                                     viewport={{ once: true, margin: "-100px" }}
                                     variants={fadeUp}
-                                    style={{ order: isEven ? 2 : 1, height: '100%' }} // Ensure height is 100%
+                                    style={{ order: isEven ? 2 : 1 }} 
                                 >
                                     <div style={{
                                         position: 'relative',
                                         borderRadius: '32px',
                                         overflow: 'hidden',
-                                        height: '100%', // Match parent height
-                                        minHeight: '400px', // Prevent too small on thin screens
+                                        aspectRatio: '4/3', // Fixed aspect ratio for uniformity
+                                        width: '100%',
                                         boxShadow: '0 10px 40px rgba(0,0,0,0.1)'
                                     }}>
                                         <img

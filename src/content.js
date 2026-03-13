@@ -83,10 +83,43 @@ export const CONTENT = {
       description: "",
       features: [
         "Specialized Negotiation: Direct adjustment and negotiation of supplements to ensure total project coverage.",
-        "Xactimate Documentation: Preparation of estimates under official industry standards to expedite processes.",
+        "Code-Compliant Restoration: We build based strictly on Massachusetts IRC codes and ANSI/IICRC S500 standards.",
         "Return Optimization: Legal and technical strategies to maximize fair payment from your insurer."
       ],
       icon: "shield-check",
+    },
+    {
+      id: "water-damage",
+      title: "Water Damage Mitigation",
+      description: "",
+      features: [
+        "Immediate Extraction: Rapid response to remove standing water and prevent further structural issues.",
+        "Moisture Control: Industrial dehumidification and specialized drying for affected areas.",
+        "Sanitization: Deep cleaning and antimicrobial treatments to ensure a safe, mold-free environment."
+      ],
+      icon: "droplets",
+    },
+    {
+      id: "tree-damage",
+      title: "Fallen Tree Damage",
+      description: "",
+      features: [
+        "Emergency Extraction: Safe and immediate removal of fallen trees affecting your property's structure.",
+        "Structural Assessment: Technical evaluation of the damage caused to the roof and underlying framing.",
+        "Debris Clearance: Complete cleanup of branches and vegetable debris to restore safety to your home."
+      ],
+      icon: "tree-pine",
+    },
+    {
+      id: "exterior-repairs",
+      title: "Exterior Repairs",
+      description: "",
+      features: [
+        "Siding Restoration: Repair and replacement of damaged siding to maintain insulation and aesthetic appeal.",
+        "Soffit & Fascia: Specialized fixes for vulnerable roof overhang components protecting against moisture and pests.",
+        "Gutter Systems: Realignment, sealing, and repair of gutters and downspouts for optimal water diversion."
+      ],
+      icon: "wrench",
     }
   ],
   PROCESS: {
@@ -127,7 +160,7 @@ export const CONTENT = {
       id: "detail-2",
       category: "Exterior Roofing",
       title: "Structural and Shingle Repairs",
-      image: "/casa2.jpeg",
+      image: "/Plywood(2).jpg",
       copy: [
         { label: "Immediate Intervention", text: "Location and sealing of critical leaks to prevent major structural damage." },
         { label: "Shingle Restoration", text: "Replacement of damaged or missing pieces matching the original aesthetic." },
@@ -171,7 +204,7 @@ export const CONTENT = {
       id: "detail-4",
       category: "Post-Storm Restoration",
       title: "Wind Damage Diagnosis and Expertise",
-      image: "/stormdamage.jpg",
+      image: "/Winddamage.jpg",
       copy: [
         { label: "On-Roof Assessment", text: "Exhaustive physical inspection by climbing onto your roof to detect damage invisible from the ground." },
         { label: "Preventive Technical Advisory", text: "Legal and technical strategies to strengthen your home against future phenomena." },
@@ -182,7 +215,7 @@ export const CONTENT = {
       id: "detail-5",
       category: "Post-Storm Restoration",
       title: "Water Damage Mitigation and Restoration",
-      image: "/water_damage_mitigation_1772813700176.png",
+      image: "/water_damage_mitigation.png",
       copy: [
         { label: "Moisture Mitigation", text: "Immediate water extraction and industrial dehumidification to stop mold." },
         { label: "Full Restoration", text: "Technical reconstruction of affected drywall, floors, and ceilings." },
@@ -193,7 +226,7 @@ export const CONTENT = {
       id: "detail-6",
       category: "Post-Storm Restoration",
       title: "Insurance Claims Management",
-      image: "/insurance_consultant_roofing_1772813716640.png",
+      image: "/insurance.png",
       copy: [
         { label: "Specialized Negotiation", text: "Direct supplement adjustment to ensure total coverage." },
         { label: "Xactimate Documentation", text: "Budget preparation under official standards to expedite processes." },
