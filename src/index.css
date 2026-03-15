@@ -706,3 +706,37 @@ ul {
   .mb-10 { margin-bottom: 40px; }
   .mb-12 { margin-bottom: 48px; }
 }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Hero Mobile Fix (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  #home > .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 7rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  #home h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+  }
+
+  #home p {
+    font-size: 0.9rem !important;
+    max-width: 100% !important;
+  }
+
+  #home .container button,
+  #home .container a[href="/servicios"] {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.9rem 1.5rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  #home img[alt="Tacurion Logo Background"] {
+    min-width: 200px !important;
+    width: 70% !important;
+  }
+}
