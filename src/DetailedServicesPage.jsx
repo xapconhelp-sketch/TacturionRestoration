@@ -39,7 +39,7 @@ export function CTA({ onOpenModal }) {
 
 export default function DetailedServicesPage({ onOpenModal }) {
     return (
-        <div style={{ background: 'var(--surface)', color: 'var(--black)' }}>
+        <div style={{ background: '#0d0d0d', color: '#ffffff' }}>
             {/* Hero / Header for Services */}
             <section className="section section-dark" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
                 <div className="container text-center">
@@ -134,7 +134,7 @@ export default function DetailedServicesPage({ onOpenModal }) {
                                                     <Check size={24} color="var(--gold)" />
                                                 </div>
                                                 <div>
-                                                    <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--black)' }}>
+                                                    <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#ffffff' }}>
                                                         {item.label}
                                                     </h4>
                                                     <p className="gray" style={{ fontSize: '1rem', lineHeight: 1.6 }}>

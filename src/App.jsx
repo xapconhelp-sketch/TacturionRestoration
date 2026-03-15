@@ -193,14 +193,21 @@ function Header() {
 /* ═══════════════════════════════════════════
    HERO
    ═══════════════════════════════════════════ */
-/* ═══════════════════════════════════════════
-   HERO — Auto Image Slider
-   ═══════════════════════════════════════════ */
+
+
+
+
 const HERO_SLIDES = [
+<<<<<<< Updated upstream
   { src: '/roofing_service.png', label: 'Certified Roofing', caption: 'Expert installation since 2009' },
   { src: '/stormdamage.jpg', label: 'Storm Damage', caption: 'We document every inch of damage' },
   { src: '/RoofRepair.jpeg', label: 'Roof Repair', caption: 'Precision repairs, lifetime warranty' },
   { src: '/water_damage_mitigation.png', label: 'Water Mitigation', caption: 'Fast response, full restoration' },
+=======
+  { src: '/rotativa1.jpg', label: 'Premium Protection', caption: 'Expert installation and repair' },
+  { src: '/rotativa2.jpg', label: 'Massachusetts Restoration', caption: 'High quality finishes' },
+  { src: '/rotativa3.jpg', label: 'Complete Home Solutions', caption: 'Safeguarding your history' },
+>>>>>>> Stashed changes
 ];
 
 function Hero() {
@@ -225,7 +232,7 @@ function Hero() {
   };
 
   return (
-    <section id="home" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+    <section id="home" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', backgroundColor: '#0d0d0d' }}>
 
       {/* ── Slider background ── */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -234,10 +241,16 @@ function Hero() {
             <img src={slide.src} alt={slide.label} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transform: i === current ? 'scale(1.04)' : 'scale(1)', transition: 'transform 6s ease-out' }} />
           </div>
         ))}
-        {/* Overlays */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.68)', zIndex: 1 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(197,160,89,0.14) 0%, transparent 50%)', zIndex: 2 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #0d0d0d 0%, transparent 45%)', zIndex: 2 }} />
+        {/* Logo and Grid pattern under overlays */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(to right, rgba(197,160,89,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(197,160,89,0.03) 1px, transparent 1px)', backgroundSize: '60px 60px', zIndex: 1 }} />
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1, pointerEvents: 'none' }}>
+           <img src="/Recurso10@3x-8.png" alt="Tacurion Logo Background" style={{ width: '45%', minWidth: '350px', opacity: 0.15, objectFit: 'contain', filter: 'drop-shadow(0 0 30px rgba(197,160,89,0.3))' }} />
+        </div>
+        
+        {/* Overlays to match colorimetry (dark and gold) */}
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(13,13,13,0.72)', zIndex: 2 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(197,160,89,0.2) 0%, transparent 60%)', zIndex: 3 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #0d0d0d 0%, transparent 45%)', zIndex: 3 }} />
       </div>
 
       {/* ── Gold top line ── */}
@@ -436,22 +449,9 @@ function Services() {
 }
 
 /* ═══════════════════════════════════════════
-   LEGACY — Dark stats panel + photo slider
+   LEGACY — Dark stats panel + single photo
    ═══════════════════════════════════════════ */
-const LEGACY_PHOTOS = [
-  '/roofing_service.png',
-  '/RoofRepair.jpeg',
-  '/stormdamage.jpg',
-  '/casa2.jpeg',
-];
-
 function Legacy() {
-  const [photoIdx, setPhotoIdx] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setPhotoIdx(p => (p + 1) % LEGACY_PHOTOS.length), 4000);
-    return () => clearInterval(t);
-  }, []);
-
   return (
     <section id="legacy" style={{ background: 'linear-gradient(160deg,#0d0d0d 0%,#181818 60%,#111 100%)', padding: 'clamp(5rem,10vw,8rem) 0', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(197,160,89,0.3) 50%,transparent)' }} />
@@ -460,25 +460,32 @@ function Legacy() {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 'clamp(2rem,5vw,5rem)', alignItems: 'center' }}>
 
-          {/* LEFT: Photo slider + stats */}
+          {/* LEFT: Photo + stats */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
-            {/* Photo slider */}
-            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', aspectRatio: '4/3', border: '1px solid rgba(197,160,89,0.15)' }}>
-              {LEGACY_PHOTOS.map((src, i) => (
-                <div key={i} style={{ position: 'absolute', inset: 0, transition: 'opacity 1s ease', opacity: i === photoIdx ? 1 : 0 }}>
-                  <img src={src} alt="Tacurion work" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: i === photoIdx ? 'scale(1.05)' : 'scale(1)', transition: 'transform 5s ease-out' }} />
-                </div>
-              ))}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%)' }} />
-              <div style={{ position: 'absolute', top: 14, left: 14, background: 'var(--gold)', color: '#000', fontSize: '0.6rem', fontWeight: 800, padding: '3px 10px', borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Real Work</div>
-              {/* Dots */}
-              <div style={{ position: 'absolute', bottom: 14, right: 14, display: 'flex', gap: '0.35rem' }}>
-                {LEGACY_PHOTOS.map((_, i) => (
-                  <button key={i} onClick={() => setPhotoIdx(i)} style={{ width: i === photoIdx ? 20 : 6, height: 6, borderRadius: 3, background: i === photoIdx ? '#C5A059' : 'rgba(255,255,255,0.3)', border: 'none', cursor: 'pointer', transition: 'all 0.3s', padding: 0 }} />
-                ))}
+            {/* Single Photo with Animating Frame effect */}
+            <motion.div 
+              style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', aspectRatio: '4/3', border: '1px solid rgba(197,160,89,0.15)' }}
+              animate={{
+                boxShadow: ['0px 0px 0px rgba(197,160,89,0)', '0px 0px 25px rgba(197,160,89,0.3)', '0px 0px 0px rgba(197,160,89,0)'],
+                borderColor: ['rgba(197,160,89,0.15)', 'rgba(197,160,89,0.6)', 'rgba(197,160,89,0.15)']
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <motion.img 
+                src="/premium_compressed.jpg" 
+                alt="Premium Tacurion work" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                animate={{ scale: [1, 1.05, 1] }} 
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} 
+              />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%), radial-gradient(circle at center, transparent 0%, rgba(13,13,13,0.3) 100%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', top: 14, left: 14, background: 'var(--gold)', color: '#000', fontSize: '0.6rem', fontWeight: 800, padding: '3px 10px', borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Premium Restoration</div>
+              <div style={{ position: 'absolute', bottom: 14, right: 14, display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', padding: '0.4rem 0.8rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.15)' }}>
+                <Check size={14} color="#C5A059" />
+                <span style={{ fontSize: '0.65rem', fontWeight: 600, color: '#fff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Verified Quality</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Stats row */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
