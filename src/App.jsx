@@ -198,16 +198,9 @@ function Header() {
 
 
 const HERO_SLIDES = [
-<<<<<<< Updated upstream
-  { src: '/roofing_service.png', label: 'Certified Roofing', caption: 'Expert installation since 2009' },
-  { src: '/stormdamage.jpg', label: 'Storm Damage', caption: 'We document every inch of damage' },
-  { src: '/RoofRepair.jpeg', label: 'Roof Repair', caption: 'Precision repairs, lifetime warranty' },
-  { src: '/water_damage_mitigation.png', label: 'Water Mitigation', caption: 'Fast response, full restoration' },
-=======
   { src: '/rotativa1.jpg', label: 'Premium Protection', caption: 'Expert installation and repair' },
   { src: '/rotativa2.jpg', label: 'Massachusetts Restoration', caption: 'High quality finishes' },
   { src: '/rotativa3.jpg', label: 'Complete Home Solutions', caption: 'Safeguarding your history' },
->>>>>>> Stashed changes
 ];
 
 function Hero() {
@@ -293,7 +286,7 @@ function Hero() {
 
           <motion.p variants={fadeUp} custom={2} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', maxWidth: 580, lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', marginBottom: '3rem' }}>
             Specialists in roofing, maintenance and professional restoration.{' '}
-            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Fall River, MA — 15+ years protecting homes.</span>
+            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Fall River, MA | Road Island — 15+ years protecting homes.</span>
           </motion.p>
 
           <motion.div variants={fadeUp} custom={3} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>

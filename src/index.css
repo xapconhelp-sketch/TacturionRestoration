@@ -656,3 +656,53 @@ ul {
   background: var(--gold);
   color: var(--white);
 }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Tablets (max-width: 1024px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .section { padding: 64px 0; }
+  .nav { padding: 1rem 0; }
+  .nav.scrolled { padding: 0.5rem 0; }
+  .stat-num { font-size: clamp(2rem, 4vw, 3rem); }
+  .step-num { width: 52px; height: 52px; font-size: 1.2rem; }
+  .icon-box { width: 48px; height: 48px; border-radius: 12px; }
+  .icon-box-lg { width: 60px; height: 60px; }
+  .testimonial { left: 1rem; right: 1rem; bottom: 1rem; padding: 1.5rem; }
+  .card { padding: clamp(1.2rem, 2.5vw, 2rem); border-radius: 20px; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Móvil (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section { padding: 48px 0; }
+  .container { padding: 0 1rem; }
+  h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .nav { padding: 0.75rem 0; }
+  .nav.scrolled { padding: 0.5rem 0; }
+  .nav-link { font-size: 0.65rem; letter-spacing: 0.1em; }
+  .btn { font-size: 0.7rem; padding: 0.75rem 1.5rem; min-height: 42px; width: 100%; }
+  .badge { font-size: 0.6rem; padding: 0.4rem 0.8rem; }
+  .divider { width: 36px; }
+  .stat-num { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+  .stat-label { font-size: 0.65rem; }
+  .step-num { width: 44px; height: 44px; font-size: 1rem; margin-bottom: 1rem; }
+  .icon-box { width: 40px; height: 40px; border-radius: 10px; }
+  .icon-box-lg { width: 52px; height: 52px; border-radius: 14px; }
+  .card { padding: 1.2rem; border-radius: 16px; }
+  .card:hover { transform: none; }
+  .testimonial { position: relative; left: auto; right: auto; bottom: auto; margin-top: 1rem; }
+  .hero-img { border-radius: 1rem; }
+  .feature-row { font-size: 0.8rem; }
+  .footer-link { font-size: 0.8rem; }
+  .gap-8 { gap: 32px; }
+  .gap-10 { gap: 40px; }
+  .gap-12 { gap: 48px; }
+  .gap-16 { gap: 2rem; }
+  .gap-20 { gap: 2.5rem; }
+  .mt-10 { margin-top: 40px; }
+  .mt-12 { margin-top: 48px; }
+  .mb-10 { margin-bottom: 40px; }
+  .mb-12 { margin-bottom: 48px; }
+}

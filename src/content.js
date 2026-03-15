@@ -160,11 +160,7 @@ export const CONTENT = {
       id: "detail-2",
       category: "Exterior Roofing",
       title: "Structural and Shingle Repairs",
-<<<<<<< Updated upstream
-      image: "/Plywood(2).jpg",
-=======
-      image: "/trabajo_frente_casa.jpg",
->>>>>>> Stashed changes
+      image: "/structural.jpg",
       copy: [
         { label: "Immediate Intervention", text: "Location and sealing of critical leaks to prevent major structural damage." },
         { label: "Shingle Restoration", text: "Replacement of damaged or missing pieces matching the original aesthetic." },
@@ -208,11 +204,7 @@ export const CONTENT = {
       id: "detail-4",
       category: "Post-Storm Restoration",
       title: "Wind Damage Diagnosis and Expertise",
-<<<<<<< Updated upstream
-      image: "/Winddamage.jpg",
-=======
       image: "/Home_section_2.jpg",
->>>>>>> Stashed changes
       copy: [
         { label: "On-Roof Assessment", text: "Exhaustive physical inspection by climbing onto your roof to detect damage invisible from the ground." },
         { label: "Preventive Technical Advisory", text: "Legal and technical strategies to strengthen your home against future phenomena." },
@@ -223,11 +215,7 @@ export const CONTENT = {
       id: "detail-5",
       category: "Post-Storm Restoration",
       title: "Water Damage Mitigation and Restoration",
-<<<<<<< Updated upstream
-      image: "/water_damage_mitigation.png",
-=======
       image: "/mitigacion.jpg",
->>>>>>> Stashed changes
       copy: [
         { label: "Moisture Mitigation", text: "Immediate water extraction and industrial dehumidification to stop mold." },
         { label: "Full Restoration", text: "Technical reconstruction of affected drywall, floors, and ceilings." },
