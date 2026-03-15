@@ -216,7 +216,7 @@ export const CONTENT = {
       id: "detail-5",
       category: "Post-Storm Restoration",
       title: "Water Damage Mitigation and Restoration",
-      image: "/mitigacion.jpg",
+      image: "/exterior_instalation.jpg",
       copy: [
         { label: "Moisture Mitigation", text: "Immediate water extraction and industrial dehumidification to stop mold." },
         { label: "Full Restoration", text: "Technical reconstruction of affected drywall, floors, and ceilings." },
