@@ -1041,3 +1041,135 @@ ul {
     transition: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Comprehensive Mobile Fix (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* ── Bottom bar: ensure it doesn't overlap content ── */
+  .bottom-bar {
+    z-index: 9999 !important;
+    position: fixed !important;
+  }
+
+  /* ── Insurance Claim: timeline steps compact ── */
+  div[style*="borderLeft: '2px dashed"] {
+    padding-left: 1.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* ── Insurance Claim: hero section padding ── */
+  div[style*="paddingLeft: 'clamp(180px"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* ── Insurance Claim: sections reduce top/bottom padding ── */
+  section[style*="padding: '100px 0'"],
+  section[style*="padding: '80px 0'"] {
+    padding: 50px 0 !important;
+  }
+
+  /* ── Services Page: reduce giant margins between service blocks ── */
+  div[style*="marginBottom: '160px'"] {
+    margin-bottom: 50px !important;
+  }
+
+  /* ── Services Page: reduce top/bottom section padding ── */
+  div[style*="padding: '96px 0'"],
+  section[style*="padding: '96px 0'"] {
+    padding: 40px 0 !important;
+  }
+
+  /* ── Services Page: CTA section ── */
+  section[style*="padding: '180px 0 120px'"] {
+    padding: 80px 0 60px !important;
+  }
+
+  /* ── Hero: badges wrap nicely ── */
+  div[style*="flexWrap: 'wrap'"] {
+    gap: 0.5rem !important;
+    justify-content: center !important;
+  }
+
+  /* ── Hero stats: stack if needed ── */
+  div[style*="borderTop: '1px solid rgba(255"] {
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    padding-top: 1.5rem !important;
+  }
+  div[style*="borderTop: '1px solid rgba(255"] > div {
+    border-right: none !important;
+    flex: 0 0 30% !important;
+  }
+
+  /* ── All inline grids: force single column ── */
+  div[style*="gridTemplateColumns: 'repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Reviews/Testimonials: full width cards ── */
+  .grid.md\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* ── Footer: everything centered ── */
+  footer { text-align: center !important; }
+  footer .flex-col { align-items: center !important; }
+  footer a[style*="display: 'inline-flex'"],
+  footer .flex { justify-content: center !important; }
+
+  /* ── Prevent horizontal overflow ── */
+  body, html {
+    overflow-x: hidden !important;
+  }
+  * {
+    max-width: 100vw;
+  }
+  img {
+    max-width: 100% !important;
+    height: auto;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Extra Small Screens (max-width: 480px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* Smaller headings */
+  h1 { font-size: clamp(1.5rem, 7vw, 2rem) !important; }
+  h2 { font-size: clamp(1.4rem, 6vw, 1.8rem) !important; }
+  h3 { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
+
+  /* Tighter containers */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Smaller buttons */
+  .btn {
+    font-size: 0.65rem !important;
+    padding: 0.65rem 1.2rem !important;
+  }
+
+  /* Stats: even smaller text */
+  .stat-num { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
+  .stat-label { font-size: 0.55rem !important; }
+
+  /* Cards: tighter padding */
+  .card { padding: 1rem !important; }
+
+  /* Step numbers: smaller */
+  .step-num { width: 38px !important; height: 38px !important; font-size: 0.9rem !important; }
+
+  /* Sections: even less padding */
+  .section { padding: 36px 0 !important; }
+
+  /* Trust bar cards: smaller padding */
+  .grid.md\:grid-cols-4 > div { padding: 1.2rem 1rem !important; }
+
+  /* FAQ: tighter */
+  .card[style*="overflow: hidden"] { border-radius: 12px !important; }
+}
