@@ -1,7 +1,7 @@
 export const CONTENT = {
   META: {
     TITLE: "Tacurion Restoration | Roofing & Storm Damage in Fall River, MA",
-    DESCRIPTION: "Expert roofing and storm damage restoration in Fall River, Massachusetts. Specialists in wind, hail, and insurance claims.",
+    DESCRIPTION: "Expert roofing and storm damage restoration in Fall River, Massachusetts & Rhode Island. Specialists in wind, hail, and insurance claims.",
     AUTHOR: "Tacurion Restoration LLC",
   },
   BRAND: {
@@ -83,7 +83,7 @@ export const CONTENT = {
       description: "",
       features: [
         "Specialized Negotiation: Direct adjustment and negotiation of supplements to ensure total project coverage.",
-        "Code-Compliant Restoration: We build based strictly on Massachusetts IRC codes and ANSI/IICRC S500 standards.",
+        "Code-Compliant Restoration: We build based strictly on Massachusetts & Rhode Island IRC codes and ANSI/IICRC S500 standards.",
         "Return Optimization: Legal and technical strategies to maximize fair payment from your insurer."
       ],
       icon: "shield-check",
@@ -146,10 +146,22 @@ export const CONTENT = {
   ],
   DETAILED_SERVICES: [
     {
+      id: "detail-4",
+      category: "Post-Storm Restoration",
+      title: "Wind Damage Diagnosis and Expertise",
+      image: "/wind_damage.jpeg",
+      intro: "At Tacurion Restoration, we specialize in complete mitigation and restoration services for residential and commercial properties across Massachusetts & Rhode Island. From emergency response to final reconstruction, our certified teams deliver code-compliant solutions backed by 15+ years of experience.",
+      copy: [
+        { label: "On-Roof Assessment", text: "Exhaustive physical inspection by climbing onto your roof to detect damage invisible from the ground." },
+        { label: "Preventive Technical Advisory", text: "Legal and technical strategies to strengthen your home against future phenomena." },
+        { label: "Free Technical Report", text: "Detailed and professional report on the current state after the event." }
+      ]
+    },
+    {
       id: "detail-1",
       category: "Exterior Roofing",
       title: "Full Roof Replacement",
-      image: "/RoofRepair.jpeg",
+      image: "/full_roof.jpg",
       copy: [
         { label: "Lifetime Warranty", text: "Installation with premium-grade materials (Shingles, Metal, Tile) fully backed." },
         { label: "High-Impact Execution", text: "Professional process completed in a 1 to 2-day cycle to minimize interruptions." },
@@ -160,7 +172,7 @@ export const CONTENT = {
       id: "detail-2",
       category: "Exterior Roofing",
       title: "Structural and Shingle Repairs",
-      image: "/structural.jpg",
+      image: "/shingle_repairs.jpg",
       copy: [
         { label: "Immediate Intervention", text: "Location and sealing of critical leaks to prevent major structural damage." },
         { label: "Shingle Restoration", text: "Replacement of damaged or missing pieces matching the original aesthetic." },
@@ -182,7 +194,7 @@ export const CONTENT = {
       id: "detail-roofing",
       category: "Exterior Roofing",
       title: "Premium Roofing Installation",
-      image: "/roofing_service.png",
+      image: "/premium.jpg",
       copy: [
         { label: "Superior Grade Materials", text: "We work exclusively with leading brands like GAF, Owens Corning, and CertainTeed to guarantee decades of durability." },
         { label: "Installation in 1-2 Days", text: "Certified teams that execute full replacement with maximum efficiency to minimize family interruptions." },
@@ -193,22 +205,11 @@ export const CONTENT = {
       id: "detail-siding",
       category: "Exterior Roofing",
       title: "Exterior Siding Installation",
-      image: "/exterior.jpg",
+      image: "/exterior_instalation.jpg",
       copy: [
         { label: "High-Performance Cladding", text: "Installation of vinyl, fiber cement, and composite wood siding for superior protection against elements." },
         { label: "Improved Thermal Insulation", text: "Modern siding adds an insulation layer that reduces energy bills up to 20% annually." },
         { label: "Property Value Elevation", text: "New siding is one of the renovations with the highest ROI, improving home appeal and appraisal." }
-      ]
-    },
-    {
-      id: "detail-4",
-      category: "Post-Storm Restoration",
-      title: "Wind Damage Diagnosis and Expertise",
-      image: "/Home_section_2.jpg",
-      copy: [
-        { label: "On-Roof Assessment", text: "Exhaustive physical inspection by climbing onto your roof to detect damage invisible from the ground." },
-        { label: "Preventive Technical Advisory", text: "Legal and technical strategies to strengthen your home against future phenomena." },
-        { label: "Free Technical Report", text: "Detailed and professional report on the current state after the event." }
       ]
     },
     {
@@ -237,7 +238,7 @@ export const CONTENT = {
       id: "detail-7",
       category: "Interiors",
       title: "Interior Remodeling and Finishes",
-      image: "/luxury_interior_remodeling_1772813733659.png",
+      image: "/interior_repair.jpeg",
       copy: [
         { label: "Post-Damage Renovation", text: "Transformation of damaged spaces into modern and aesthetically superior environments." },
         { label: "Luxury Finishes", text: "Fine carpentry, painting, and high-end finishes to revalue your home." },

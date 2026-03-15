@@ -199,7 +199,7 @@ function Header() {
 
 const HERO_SLIDES = [
   { src: '/rotativa1.jpg', label: 'Premium Protection', caption: 'Expert installation and repair' },
-  { src: '/rotativa2.jpg', label: 'Massachusetts Restoration', caption: 'High quality finishes' },
+  { src: '/rotativa2.jpg', label: 'Massachusetts & Rhode Island', caption: 'High quality finishes' },
   { src: '/rotativa3.jpg', label: 'Complete Home Solutions', caption: 'Safeguarding your history' },
 ];
 
@@ -207,6 +207,13 @@ function Hero() {
   const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -267,12 +274,17 @@ function Hero() {
       </AnimatePresence>
 
       {/* ── Main content ── */}
-      <div className="container" style={{ position: 'relative', zIndex: 10, paddingTop: 'clamp(8rem, 16vw, 12rem)', paddingBottom: 'clamp(6rem, 12vw, 9rem)', paddingLeft: 'clamp(180px, 20vw, 220px)' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 10, paddingTop: isMobile ? '5rem' : 'clamp(8rem, 16vw, 12rem)', paddingBottom: isMobile ? '4rem' : 'clamp(6rem, 12vw, 9rem)', paddingLeft: isMobile ? 0 : 'clamp(180px, 20vw, 220px)' }}>
         <motion.div initial="hidden" animate="visible" variants={stagger} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+
+          {/* Mobile-only logo above headline */}
+          <div className="hero-mobile-logo" style={{ display: 'none', justifyContent: 'center', marginBottom: '1.5rem' }}>
+            <img src="/Recurso10@3x-8.png" alt="Tacurion Logo" style={{ height: '90px', width: 'auto', filter: 'drop-shadow(0 5px 15px rgba(0,0,0,0.3))' }} />
+          </div>
 
           <motion.div variants={fadeUp} custom={0} style={{ marginBottom: '2rem' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(197,160,89,0.12)', border: '1px solid rgba(197,160,89,0.35)', borderRadius: '100px', padding: '0.45rem 1.2rem', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#C5A059' }}>
-              <HardHat size={13} /> Massachusetts — Roofing & Restoration
+              <HardHat size={13} /> Massachusetts & Rhode Island — Roofing & Restoration
             </span>
           </motion.div>
 
@@ -286,7 +298,7 @@ function Hero() {
 
           <motion.p variants={fadeUp} custom={2} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', maxWidth: 580, lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', marginBottom: '3rem' }}>
             Specialists in roofing, maintenance and professional restoration.{' '}
-            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Fall River, MA | Road Island — 15+ years protecting homes.</span>
+            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Fall River, MA | Rhode Island — 15+ years protecting homes.</span>
           </motion.p>
 
           <motion.div variants={fadeUp} custom={3} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
@@ -514,7 +526,7 @@ function Legacy() {
                 <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff' }}>Our Essence</h3>
               </div>
               <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.55)', marginBottom: '1.4rem' }}>At Tacurion Restoration, we don't just see shingles, gutters, or siding. We see the laughter in your living room, the safety of your children's sleep, and the investment of a lifetime.</p>
-              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.55)', marginBottom: '2.5rem' }}>For the past 15 years, we've rooted ourselves in the Massachusetts community, not as contractors, but as neighbors — with 500+ projects completed with the same care we'd give our own homes.</p>
+              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.55)', marginBottom: '2.5rem' }}>For the past 15 years, we've rooted ourselves in the Massachusetts & Rhode Island community, not as contractors, but as neighbors — with 500+ projects completed with the same care we'd give our own homes.</p>
             </motion.div>
             <motion.div variants={fadeUp}>
               <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', marginBottom: '1rem' }}>Why We Do It</h3>
@@ -614,7 +626,7 @@ function Reviews() {
             What Our <span style={{ color: '#C5A059' }}>Clients Say</span>
           </motion.h2>
           <motion.p variants={fadeUp} style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', maxWidth: 500, margin: '1rem auto 0' }}>
-            Our reputation is built on every homeowner's satisfaction in Massachusetts.
+            Our reputation is built on every homeowner's satisfaction in Massachusetts & Rhode Island.
           </motion.p>
         </motion.div>
 
@@ -688,7 +700,7 @@ function Footer() {
               </div>
             </div>
             <p className="gray" style={{ fontSize: '0.9rem', lineHeight: 1.7, maxWidth: 300 }}>
-              Certified specialists in roof restoration and insurance management in Massachusetts.
+              Certified specialists in roof restoration and insurance management in Massachusetts & Rhode Island.
             </p>
             <div className="flex gap-3" style={{ marginTop: '1.5rem' }}>
               {[
@@ -872,7 +884,7 @@ function FloatingContactMenu({ onOpenTextModal }) {
   ];
 
   return (
-    <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', background: '#121212', border: '1px solid rgba(255,255,255,0.08)', zIndex: 9000, padding: '0.8rem 2.5rem', borderRadius: '100px', boxShadow: '0 15px 40px rgba(0,0,0,0.4)', display: 'flex', gap: '3rem', alignItems: 'center' }}>
+    <div className="bottom-bar" style={{ position: 'fixed', bottom: '2rem', right: '2rem', background: '#121212', border: '1px solid rgba(255,255,255,0.08)', zIndex: 9000, padding: '0.8rem 2.5rem', borderRadius: '100px', boxShadow: '0 15px 40px rgba(0,0,0,0.4)', display: 'flex', gap: '3rem', alignItems: 'center' }}>
       {items.map((item, i) => (
         <button
           key={i}

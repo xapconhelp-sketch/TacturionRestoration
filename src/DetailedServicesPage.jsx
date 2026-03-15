@@ -22,7 +22,7 @@ export function CTA({ onOpenModal }) {
                     Don't Wait for the Next Storm
                 </h2>
                 <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.2rem', maxWidth: 600, margin: '0 auto 3rem', lineHeight: 1.6 }}>
-                    Schedule your free inspection today and protect your biggest investment with Massachusetts' restoration experts.
+                    Schedule your free inspection today and protect your biggest investment with Massachusetts & Rhode Island's restoration experts.
                 </p>
                 <div className="flex justify-center flex-wrap gap-5">
                     <button onClick={onOpenModal} className="btn" style={{ background: 'var(--gold)', color: '#fff', padding: '1.2rem 3.5rem', borderRadius: '6px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>
@@ -87,14 +87,15 @@ export default function DetailedServicesPage({ onOpenModal }) {
                                         position: 'relative',
                                         borderRadius: '32px',
                                         overflow: 'hidden',
-                                        aspectRatio: '4/3', // Fixed aspect ratio for uniformity
+                                        aspectRatio: '4/3',
                                         width: '100%',
-                                        boxShadow: '0 10px 40px rgba(0,0,0,0.1)'
+                                        boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+                                        background: '#1a1a1a'
                                     }}>
                                         <img
                                             src={service.image}
                                             alt={service.title}
-                                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: service.id === 'detail-7' ? 'top' : 'center', display: 'block' }}
                                         />
                                         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,18,18,0.1), transparent)' }} />
                                     </div>

@@ -166,7 +166,7 @@ export default function InsuranceClaimPage() {
                         <motion.p variants={fadeUp} style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', marginBottom: '1rem' }}>The insurance company will send an adjuster to evaluate the damage. This is the most important step.</motion.p>
                         <motion.ul variants={fadeUp} style={{ listStyle: 'none', padding: 0, color: 'rgba(255,255,255,0.7)', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                             <li><strong style={{ color: '#fff' }}>Our Role:</strong> Tacurion Restoration INC will be present. We speak the same technical "language" as the adjuster. We ensure they do not overlook details like the drip edge, starter shingles, or local code compliance.</li>
-                            <li><strong style={{ color: '#fff' }}>Code Defense:</strong> If you are in Massachusetts, we will remind the adjuster that, according to building codes, a full replacement must meet new construction standards.</li>
+                            <li><strong style={{ color: '#fff' }}>Code Defense:</strong> If you are in Massachusetts or Rhode Island, we will remind the adjuster that, according to building codes, a full replacement must meet new construction standards.</li>
                         </motion.ul>
                     </motion.div>
 
@@ -190,7 +190,7 @@ export default function InsuranceClaimPage() {
                         <motion.h3 variants={fadeUp} style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--gold)', marginBottom: '1rem' }}>Step 5: THE DEDUCTIBLE (Non-Negotiable Point)</motion.h3>
                         <motion.p variants={fadeUp} style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', marginBottom: '1rem' }}>It is vital that we speak honestly about this: The homeowner is legally responsible for paying their deductible.</motion.p>
                         <motion.ul variants={fadeUp} style={{ listStyle: 'none', padding: 0, color: 'rgba(255,255,255,0.7)', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <li><strong style={{ color: '#fff' }}>The Law:</strong> In most states, including Massachusetts, it is illegal (and considered insurance fraud) for a contractor to "absorb", "waive", or "pay" the customer's deductible through inflated invoices or fake rebates.</li>
+                            <li><strong style={{ color: '#fff' }}>The Law:</strong> In most states, including Massachusetts & Rhode Island, it is illegal (and considered insurance fraud) for a contractor to "absorb", "waive", or "pay" the customer's deductible through inflated invoices or fake rebates.</li>
                             <li><strong style={{ color: '#fff' }}>Transparency:</strong> Tacurion Restoration INC operates under the highest ethical standards. Your deductible is your only investment in a new roof that can be worth $15,000 or $30,000. We take care of maximizing every penny the insurance pays, but the deductible is your part of the contract.</li>
                         </motion.ul>
                     </motion.div>
@@ -245,7 +245,7 @@ export default function InsuranceClaimPage() {
                                 {[
                                     { svg: <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>, text: "No out-of-pocket costs — only your deductible" },
                                     { svg: <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>, text: "Full documentation & claim representation" },
-                                    { svg: <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>, text: "Massachusetts specialists since 2009" },
+                                    { svg: <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>, text: "Massachusetts & Rhode Island specialists since 2009" },
                                 ].map((item, i) => (
                                     <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '0.93rem', fontWeight: 500, color: 'rgba(255,255,255,0.85)' }}>
                                         <span style={{ width: 38, height: 38, borderRadius: 11, background: 'rgba(197,160,89,0.12)', border: '1px solid rgba(197,160,89,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'var(--gold)' }}>

@@ -740,3 +740,275 @@ ul {
     width: 70% !important;
   }
 }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Logo & All Pages Mobile (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* ── Navbar: HIDE logo when NOT scrolled on mobile ── */
+  header.nav:not(.scrolled) > a:first-child {
+    display: none !important;
+  }
+  /* ── Navbar: SHOW logo centered when scrolled ── */
+  header.nav.scrolled > a:first-child {
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    top: 50% !important;
+    display: block !important;
+  }
+  header.nav.scrolled > a:first-child img {
+    height: 40px !important;
+  }
+
+  /* ── Hero: show mobile logo above headline ── */
+  .hero-mobile-logo {
+    display: flex !important;
+  }
+
+  /* ── Mobile hamburger: push to right ── */
+  .md\:hidden.flex.items-center.justify-end.w-full {
+    justify-content: flex-end !important;
+  }
+
+  /* ── Services Page: stack grid to single column ── */
+  .container > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    margin-bottom: 60px !important;
+    padding: 40px 0 !important;
+  }
+
+  /* ── Services Page: images full width ── */
+  .container > div[style*="grid"] img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+
+  /* ── Insurance Claim Page: reduce side padding on timeline ── */
+  div[style*="paddingLeft: '2.5rem'"] {
+    padding-left: 1.5rem !important;
+  }
+
+  /* ── Insurance Claim Page: smaller step images ── */
+  div[style*="height: '400px'"] {
+    height: 220px !important;
+  }
+
+  /* ── Insurance Claim Page: form grid single col ── */
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Insurance Claim Page: form card padding ── */
+  div[style*="padding: '2rem 2.5rem 0'"] {
+    padding: 1.5rem 1.2rem 0 !important;
+  }
+  div[style*="padding: '1.8rem 2.5rem 2.5rem'"] {
+    padding: 1.2rem !important;
+  }
+
+  /* ── Insurance Claim: step headings ── */
+  h3[style*="fontSize: '1.8rem'"] {
+    font-size: 1.3rem !important;
+  }
+
+  /* ── Footer: stack columns ── */
+  footer .container > div {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 2rem !important;
+  }
+
+  /* ── General: all text-center on mobile ── */
+  .text-center {
+    text-align: center !important;
+  }
+
+  /* ── General: grids to single column ── */
+  .lg\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Bottom Contact Bar (max-width: 1024px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .bottom-bar {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    justify-content: space-evenly !important;
+    padding: 0.7rem 1rem !important;
+    gap: 0 !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Insurance Claim + Navbar Scroll
+   Phone only (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* ── Insurance page: symmetric padding and center ── */
+  div[style*="background: '#121212'"] > .section,
+  div[style*="background: '#121212'"] > section {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  div[style*="background: '#121212'"] > .section:first-child {
+    padding-top: 120px !important;
+    text-align: center !important;
+  }
+
+  /* ── Timeline steps: compact ── */
+  div[style*="borderLeft: '2px dashed"] {
+    padding-left: 1.8rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  div[style*="borderLeft: '2px dashed"] > div:first-child {
+    left: -18px !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1rem !important;
+  }
+
+  /* ── Step images: reduce ── */
+  div[style*="height: '400px'"] {
+    height: 200px !important;
+    border-radius: 12px !important;
+  }
+
+  /* ── Form: single column ── */
+  .grid.lg\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  div[style*="borderRadius: 28"] {
+    border-radius: 20px !important;
+  }
+
+  /* ── Navbar: reinforce fixed + stable scroll logo ── */
+  header.nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+
+  header.nav.scrolled > a:first-child {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transition: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — HOME Comprehensive Mobile (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* TrustBar: 4-col → 2-col */
+  .grid.md\:grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Services cards: 3-col → 1-col */
+  #services .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+
+  /* Legacy: stack photo + text, center text */
+  #legacy .container > div { grid-template-columns: 1fr !important; }
+  #legacy .container > div > div { text-align: center !important; }
+
+  /* Process: 3-col → 1-col */
+  #process .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+
+  /* Reviews: 3-col → 1-col */
+  #reviews .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+
+  /* Footer: 3-col → 1-col, centered */
+  footer .grid.md\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+  footer .flex.items-center.gap-3 { justify-content: center !important; }
+  footer .flex.gap-3 { justify-content: center !important; }
+
+  /* Mobile drawer full width */
+  div[style*="width: 320"] { width: 100vw !important; max-width: 100vw !important; }
+
+  /* Body: add padding so bottom bar doesn't overlap content */
+  body { padding-bottom: 60px !important; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — HOME Tablet (max-width: 1024px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  /* TrustBar: 4-col → 2-col */
+  .grid.md\:grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Legacy: stack */
+  #legacy .container > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — OUR SERVICES Page Mobile (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Hero: reduce top padding */
+  section[style*="paddingTop: '140px'"] { padding-top: 100px !important; }
+
+  /* Service blocks: reduce huge margins */
+  div[style*="marginBottom: '160px'"] { margin-bottom: 60px !important; }
+  div[style*="padding: '96px 0'"] { padding: 40px 0 !important; }
+
+  /* Service titles: smaller on mobile */
+  h2[style*="clamp(2.2rem"] { font-size: clamp(1.6rem, 5vw, 2rem) !important; }
+
+  /* CTA section: reduce padding */
+  section[style*="padding: '180px 0 120px'"] { padding: 100px 0 60px !important; }
+
+  /* Service image containers: full width, shorter */
+  div[style*="aspectRatio: '4/3'"] {
+    aspect-ratio: 16/9 !important;
+    border-radius: 16px !important;
+  }
+
+  /* Category label: smaller */
+  p[style*="letterSpacing: '0.15em'"] { font-size: 0.75rem !important; }
+
+  /* Copy labels: reduce padding */
+  div[style*="padding: '1.5rem'"] { padding: 1rem !important; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — INSURANCE CLAIM Page Mobile (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Hero heading: smaller */
+  h1[style*="clamp(2.5rem"] { font-size: clamp(1.8rem, 6vw, 2.2rem) !important; }
+
+  /* Sections: reduce padding */
+  section[style*="padding: '100px 0'"] { padding: 60px 0 !important; }
+  section[style*="padding: '60px 0 100px 0'"] { padding: 40px 0 60px !important; }
+
+  /* Form container: tighter padding */
+  div[style*="padding: '3rem'"] { padding: 1.5rem !important; }
+
+  /* Insurance hero subtitle: smaller */
+  p[style*="fontSize: '1.3rem'"] { font-size: 1rem !important; }
+
+  /* Step description: full width */
+  p[style*="fontSize: '1.1rem'"] { font-size: 0.95rem !important; }
+}
