@@ -1012,3 +1012,32 @@ ul {
   /* Step description: full width */
   p[style*="fontSize: '1.1rem'"] { font-size: 0.95rem !important; }
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE VISUAL ADJUSTMENTS (max-width: 768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* 1. Center step-by-step content */
+  #process .grid > div,
+  #process .text-center {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  #process .step-num {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 2. Symmetric edge padding on all main containers */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* 3. Logo: fixed size on scroll — no shrinking */
+  header.nav.scrolled > a:first-child img {
+    height: 40px !important;
+    width: auto !important;
+    transition: none !important;
+  }
+}
