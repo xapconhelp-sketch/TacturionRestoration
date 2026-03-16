@@ -56,6 +56,17 @@ export const CONTENT = {
   },
   SERVICES: [
     {
+      id: "water-damage",
+      title: "Water Damage Mitigation",
+      description: "",
+      features: [
+        "Immediate Extraction: Rapid response to remove standing water and prevent further structural issues.",
+        "Moisture Control: Industrial dehumidification and specialized drying for affected areas.",
+        "Sanitization: Deep cleaning and antimicrobial treatments to ensure a safe, mold-free environment."
+      ],
+      icon: "droplets",
+    },
+    {
       id: "roof-replacement",
       title: "Full Roof Replacement",
       description: "",
@@ -87,17 +98,6 @@ export const CONTENT = {
         "Return Optimization: Legal and technical strategies to maximize fair payment from your insurer."
       ],
       icon: "shield-check",
-    },
-    {
-      id: "water-damage",
-      title: "Water Damage Mitigation",
-      description: "",
-      features: [
-        "Immediate Extraction: Rapid response to remove standing water and prevent further structural issues.",
-        "Moisture Control: Industrial dehumidification and specialized drying for affected areas.",
-        "Sanitization: Deep cleaning and antimicrobial treatments to ensure a safe, mold-free environment."
-      ],
-      icon: "droplets",
     },
     {
       id: "tree-damage",
@@ -146,6 +146,54 @@ export const CONTENT = {
   ],
   DETAILED_SERVICES: [
     {
+      id: "detail-water-damage",
+      category: "Post-Storm Restoration",
+      title: "Water Damage: Mitigation and Restoration",
+      conclusion: "At Tacurion Restoration INC, we build and restore under IICRC WRT/ASD - IRC - IBC standards",
+      tabs: [
+        {
+          id: "mitigation",
+          label: "Mitigation",
+          icon: "ShieldCheck",
+          title: "Mitigation: Your Home's 'First Aid'",
+          images: [
+            "/mitigation.jpeg",
+            "/Interior4.jpg",
+            "/Interior6.jpg",
+            "/Home_section_2.jpg",
+            "/exterior_instalation.jpg"
+          ],
+          intro: "Mitigation is the immediate response phase. Its main objective is to stop the progress of damage and stabilize the structure.",
+          copy: [
+            { label: "Inspection and Evaluation", text: "We identify the water category (clean, gray, or black) and the class of intrusion to determine the drying protocol." },
+            { label: "Water Extraction", text: "We remove standing water quickly to prevent porous materials from becoming saturated." },
+            { label: "Environmental Stabilization", text: "We install industrial dehumidifiers and air movers to control relative humidity and prevent mold growth." },
+            { label: "Selective Demolition", text: "We remove only materials that cannot be saved (drywall or saturated laminate) to facilitate drying of the internal structure." }
+          ]
+        },
+        {
+          id: "restoration",
+          label: "Restoration",
+          icon: "Wrench",
+          title: "Restoration: Back to Normal",
+          images: [
+            "/Mitigation1.jpg",
+            "/interior_repair.jpeg",
+            "/interior.jpeg",
+            "/Interior5.jpg",
+            "/interior7.jpeg"
+          ],
+          intro: "Once humidity levels are within the Dry Standard, the reconstruction phase begins.",
+          copy: [
+            { label: "Cleaning and Sanitization", text: "We apply antimicrobial agents to ensure the area is safe and free of pathogens." },
+            { label: "Material Replacement", text: "We install new finishes (floors, cabinets, moldings) strictly following current building codes." },
+            { label: "Precision Finishes", text: "We perform painting and fine carpentry, ensuring measurements match the original design." },
+            { label: "Coverage Guarantee", text: "We document every step under IICRC standards to ensure your insurance covers the total cost of recovery." }
+          ]
+        }
+      ]
+    },
+    {
       id: "detail-4",
       category: "Post-Storm Restoration",
       title: "Wind Damage Diagnosis and Expertise",
@@ -161,7 +209,7 @@ export const CONTENT = {
       id: "detail-1",
       category: "Exterior Roofing",
       title: "Full Roof Replacement",
-      image: "/full_roof.jpg",
+      image: "/Fullreplacement.jpg",
       copy: [
         { label: "Lifetime Warranty", text: "Installation with premium-grade materials (Shingles, Metal, Tile) fully backed." },
         { label: "High-Impact Execution", text: "Professional process completed in a 1 to 2-day cycle to minimize interruptions." },
@@ -183,7 +231,7 @@ export const CONTENT = {
       id: "detail-3",
       category: "Exterior Roofing",
       title: "Emergency Tree Removal",
-      image: "/tree.jpg",
+      image: "/storm-damage.png",
       copy: [
         { label: "Emergency Extraction", text: "Safe removal of fallen trees or those at risk of collapse." },
         { label: "Comprehensive Cleanup", text: "Total management of vegetable debris to clear workspaces quickly." },
@@ -205,22 +253,11 @@ export const CONTENT = {
       id: "detail-siding",
       category: "Exterior Roofing",
       title: "Exterior Siding Installation",
-      image: "/exterior_instalation.jpg",
+      image: "/siding.jpg",
       copy: [
         { label: "High-Performance Cladding", text: "Installation of vinyl, fiber cement, and composite wood siding for superior protection against elements." },
         { label: "Improved Thermal Insulation", text: "Modern siding adds an insulation layer that reduces energy bills up to 20% annually." },
         { label: "Property Value Elevation", text: "New siding is one of the renovations with the highest ROI, improving home appeal and appraisal." }
-      ]
-    },
-    {
-      id: "detail-5",
-      category: "Post-Storm Restoration",
-      title: "Water Damage Mitigation and Restoration",
-      image: "/mitigacion.jpg",
-      copy: [
-        { label: "Moisture Mitigation", text: "Immediate water extraction and industrial dehumidification to stop mold." },
-        { label: "Full Restoration", text: "Technical reconstruction of affected drywall, floors, and ceilings." },
-        { label: "Antimicrobial Treatment", text: "Deep sanitization protocols to ensure a safe environment." }
       ]
     },
     {
@@ -238,7 +275,7 @@ export const CONTENT = {
       id: "detail-7",
       category: "Interiors",
       title: "Interior Remodeling and Finishes",
-      image: "/interior_repair.jpeg",
+      image: "/interior.jpeg",
       copy: [
         { label: "Post-Damage Renovation", text: "Transformation of damaged spaces into modern and aesthetically superior environments." },
         { label: "Luxury Finishes", text: "Fine carpentry, painting, and high-end finishes to revalue your home." },

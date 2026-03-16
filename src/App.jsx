@@ -257,24 +257,24 @@ function Hero() {
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent, #C5A059 30%, #e8c97a 50%, #C5A059 70%, transparent)', zIndex: 10 }} />
 
       {/* ── Slide counter dots ── */}
-      <div style={{ position: 'absolute', bottom: '3rem', right: '3rem', zIndex: 10, display: 'flex', gap: '0.5rem' }}>
+      <div style={{ position: 'absolute', bottom: isMobile ? '1rem' : '3rem', right: isMobile ? '1rem' : '3rem', zIndex: 10, display: 'flex', gap: '0.4rem' }}>
         {HERO_SLIDES.map((_, i) => (
           <button key={i} onClick={() => { setPrev(current); setCurrent(i); }}
-            style={{ width: i === current ? 28 : 8, height: 8, borderRadius: 4, background: i === current ? '#C5A059' : 'rgba(255,255,255,0.25)', border: 'none', cursor: 'pointer', transition: 'all 0.4s', padding: 0 }} />
+            style={{ width: i === current ? 24 : 6, height: 6, borderRadius: 3, background: i === current ? '#C5A059' : 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer', transition: 'all 0.4s', padding: 0 }} />
         ))}
       </div>
 
       {/* ── Current slide label ── */}
       <AnimatePresence mode="wait">
         <motion.div key={current} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.5 }}
-          style={{ position: 'absolute', bottom: '3rem', left: '3rem', zIndex: 10, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-          <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#C5A059' }} />
-          <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>{HERO_SLIDES[current].label} — {HERO_SLIDES[current].caption}</span>
+          style={{ position: 'absolute', bottom: isMobile ? '1rem' : '3rem', left: isMobile ? '1rem' : '3rem', zIndex: 10, display: 'flex', alignItems: 'center', gap: '0.6rem', maxWidth: isMobile ? 'calc(100% - 120px)' : 'none', overflow: 'hidden' }}>
+          <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#C5A059', flexShrink: 0 }} />
+          <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{HERO_SLIDES[current].label}</span>
         </motion.div>
       </AnimatePresence>
 
       {/* ── Main content ── */}
-      <div className="container" style={{ position: 'relative', zIndex: 10, paddingTop: isMobile ? '5rem' : 'clamp(8rem, 16vw, 12rem)', paddingBottom: isMobile ? '4rem' : 'clamp(6rem, 12vw, 9rem)', paddingLeft: isMobile ? 0 : 'clamp(180px, 20vw, 220px)' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 10, paddingTop: isMobile ? '5.5rem' : 'clamp(8rem, 16vw, 12rem)', paddingBottom: isMobile ? '7.5rem' : 'clamp(6rem, 12vw, 9rem)', paddingLeft: isMobile ? 0 : 'clamp(180px, 20vw, 220px)' }}>
         <motion.div initial="hidden" animate="visible" variants={stagger} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
 
           {/* Mobile-only logo above headline */}
@@ -332,7 +332,7 @@ function Hero() {
             ))}
           </motion.div>
 
-          <motion.div variants={fadeUp} custom={5} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '2.5rem', width: '100%', maxWidth: 560 }}>
+          <motion.div variants={fadeUp} custom={5} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: isMobile ? '1.5rem' : '2.5rem', width: '100%', maxWidth: 560 }}>
             {[{ num: '500+', label: 'Projects Completed' }, { num: '15+', label: 'Years Experience' }, { num: '100%', label: 'Satisfaction' }].map((s, i) => (
               <div key={i} style={{ flex: 1, textAlign: 'center', padding: '0 1.5rem', borderRight: i < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
                 <div style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 900, color: '#C5A059', lineHeight: 1, fontFamily: 'var(--font-display)' }}>{s.num}</div>
@@ -814,7 +814,7 @@ function ContactModal({ isOpen, onClose }) {
 
         {/* Logo */}
         <div className="flex justify-center mb-1">
-          <img src="/Recurso10@3x-8.png" alt="Tacurion Logo" style={{ height: '50px', width: 'auto' }} />
+          <img src="/Recurso12@3x-8.png" alt="Tacurion Logo" style={{ height: '50px', width: 'auto' }} />
         </div>
 
         <div className="text-center">
