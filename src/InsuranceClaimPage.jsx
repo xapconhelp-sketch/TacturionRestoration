@@ -132,7 +132,7 @@ export default function InsuranceClaimPage() {
             {/* 2. THE INSURANCE CLAIM PROCESS */}
             <section style={{ padding: '60px 0 100px 0' }}>
                 <div className="container" style={{ maxWidth: '900px' }}>
-                    
+
                     {/* Step 1 */}
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} style={{ marginBottom: '4rem', paddingLeft: '2.5rem', borderLeft: '2px dashed rgba(197,160,89,0.3)', position: 'relative' }}>
                         <div style={{ position: 'absolute', top: 0, left: '-21px', width: '40px', height: '40px', background: '#121212', border: '2px solid var(--gold)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: 'var(--gold)', fontSize: '1.2rem' }}>1</div>
@@ -267,7 +267,7 @@ export default function InsuranceClaimPage() {
                             <div style={{ background: 'linear-gradient(160deg,#1f1f1f 0%,#161616 100%)', border: '1px solid rgba(197,160,89,0.18)', borderRadius: 28, overflow: 'hidden', boxShadow: '0 0 0 1px rgba(197,160,89,0.04), 0 35px 90px rgba(0,0,0,0.7)', position: 'relative' }}>
                                 <div style={{ height: 3, background: 'linear-gradient(90deg, transparent, rgba(197,160,89,0.4) 20%, #C5A059 50%, rgba(197,160,89,0.4) 80%, transparent)' }} />
                                 <div style={{ position: 'absolute', top: -30, right: -30, width: 120, height: 120, background: 'radial-gradient(circle, rgba(197,160,89,0.1), transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }} />
-                                
+
                                 <div style={{ padding: '2rem 2.5rem 0', textAlign: 'center', position: 'relative' }}>
                                     <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.3rem' }}>Request Free Inspection</h3>
                                     <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)', marginBottom: '0.75rem' }}>We'll get back to you within 24 hours</p>
