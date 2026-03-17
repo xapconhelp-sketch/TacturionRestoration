@@ -428,7 +428,7 @@ function Services() {
               'storm-damage': 'center 35%',
               'insurance-expert': 'center center',
               'tree-damage': 'center top',
-              'exterior-repairs': 'center 45%' // Ajustado nuevamente
+              'exterior-repairs': 'center 25%' // Ajustado para encuadrar la casa en la parte superior
             };
             const imgPosition = positionMap[s.id] || 'center top';
             
