@@ -425,10 +425,10 @@ function Services() {
             const positionMap = {
               'water-damage': 'center top',
               'roof-replacement': 'center center',
-              'storm-damage': 'center 35%', // Ajustado de 'center top'
+              'storm-damage': 'center 35%',
               'insurance-expert': 'center center',
               'tree-damage': 'center top',
-              'exterior-repairs': 'center 30%' // Ajustado de 'center center'
+              'exterior-repairs': 'center 45%' // Ajustado nuevamente
             };
             const imgPosition = positionMap[s.id] || 'center top';
             
