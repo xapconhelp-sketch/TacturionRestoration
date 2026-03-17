@@ -422,27 +422,54 @@ function Services() {
           {CONTENT.SERVICES.map((s, i) => {
             const Icon = ICONS[s.icon];
             const a = accents[i];
+            const positionMap = {
+              'water-damage': 'center top',
+              'roof-replacement': 'center center',
+              'storm-damage': 'center 35%', // Ajustado de 'center top'
+              'insurance-expert': 'center center',
+              'tree-damage': 'center top',
+              'exterior-repairs': 'center 30%' // Ajustado de 'center center'
+            };
+            const imgPosition = positionMap[s.id] || 'center top';
+            
             return (
               <motion.div key={s.id} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-                style={{ position: 'relative', background: a.grad, border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '2.5rem 2rem', overflow: 'hidden', transition: 'transform 0.3s,border-color 0.3s,box-shadow 0.3s', display: 'flex', flexDirection: 'column' }}
+                style={{ position: 'relative', background: a.grad, border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', overflow: 'hidden', transition: 'transform 0.3s,border-color 0.3s,box-shadow 0.3s', display: 'flex', flexDirection: 'column' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.borderColor = 'rgba(197,160,89,0.28)'; e.currentTarget.style.boxShadow = `0 24px 56px ${a.glow}`; }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: '1px', background: `linear-gradient(90deg,transparent,${a.top},transparent)` }} />
-                <div style={{ position: 'absolute', top: 14, right: 18, fontSize: '5rem', fontWeight: 900, color: 'rgba(255,255,255,0.025)', lineHeight: 1, fontFamily: 'var(--font-display)', userSelect: 'none' }}>0{i + 1}</div>
-                <div style={{ width: 56, height: 56, borderRadius: 16, background: 'rgba(197,160,89,0.1)', border: '1px solid rgba(197,160,89,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.8rem', color: '#C5A059' }}>
-                  <Icon size={26} strokeWidth={1.8} />
-                </div>
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', fontWeight: 800, color: '#fff', lineHeight: 1.2 }}>{s.title}</h3>
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                  {s.features.map((f, idx) => (
-                    <div key={idx} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                      <div style={{ width: 20, height: 20, borderRadius: '50%', background: 'rgba(197,160,89,0.15)', border: '1px solid rgba(197,160,89,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
-                        <Check size={11} color="#C5A059" strokeWidth={2.5} />
-                      </div>
-                      <span style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.6 }}>{f}</span>
+                <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: '1px', background: `linear-gradient(90deg,transparent,${a.top},transparent)`, zIndex: 10 }} />
+                
+                {/* Image Banner */}
+                {s.imageName && (
+                  <div className="card-image-banner">
+                    <picture>
+                      <source srcSet={`/src/assets/images/services/${s.imageName}.webp`} type="image/webp" />
+                      <img src={`/src/assets/images/services/${s.imageName}.jpg`} alt={s.title} style={{ objectPosition: imgPosition }} />
+                    </picture>
+                  </div>
+                )}
+                
+                <div style={{ padding: '0 2rem 2.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ position: 'absolute', top: 134, right: 18, fontSize: '5rem', fontWeight: 900, color: 'rgba(255,255,255,0.025)', lineHeight: 1, fontFamily: 'var(--font-display)', userSelect: 'none', zIndex: 0 }}>0{i + 1}</div>
+                  
+                  <div className="card-icon-wrapper" style={{ padding: '4px', background: 'linear-gradient(135deg, #1f1f1f, #111)', borderRadius: '14px', border: 'none' }}>
+                    <div style={{ width: 56, height: 56, borderRadius: '10px', background: 'rgba(197,160,89,0.1)', border: '1px solid rgba(197,160,89,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#C5A059' }}>
+                      <Icon size={26} strokeWidth={1.8} />
                     </div>
-                  ))}
+                  </div>
+                  
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', marginTop: '1rem', fontWeight: 800, color: '#fff', lineHeight: 1.2, position: 'relative', zIndex: 1 }}>{s.title}</h3>
+                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.8rem', position: 'relative', zIndex: 1 }}>
+                    {s.features.map((f, idx) => (
+                      <div key={idx} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                        <div style={{ width: 20, height: 20, borderRadius: '50%', background: 'rgba(197,160,89,0.15)', border: '1px solid rgba(197,160,89,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
+                          <Check size={11} color="#C5A059" strokeWidth={2.5} />
+                        </div>
+                        <span style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.6 }}>{f}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             );

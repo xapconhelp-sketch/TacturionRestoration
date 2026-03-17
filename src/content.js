@@ -59,6 +59,7 @@ export const CONTENT = {
       id: "water-damage",
       title: "Water Damage Mitigation",
       description: "",
+      imageName: "water-damage-mitigation",
       features: [
         "Immediate Extraction: Rapid response to remove standing water and prevent further structural issues.",
         "Moisture Control: Industrial dehumidification and specialized drying for affected areas.",
@@ -70,6 +71,7 @@ export const CONTENT = {
       id: "roof-replacement",
       title: "Full Roof Replacement",
       description: "",
+      imageName: "full-roof-replacement",
       features: [
         "High-Impact Execution: Professional installation completed in a 1 to 2-day cycle to minimize interruptions.",
         "Structural Warranty: Comprehensive lifetime backing that secures the value and integrity of your property.",
@@ -81,6 +83,7 @@ export const CONTENT = {
       id: "storm-damage",
       title: "Storm Damage Specialists",
       description: "",
+      imageName: "storm-damage",
       features: [
         "On-Roof Assessment: Exhaustive physical inspection by climbing onto your roof to detect subtle damage invisible from the ground.",
         "Free Technical Report: Detailed and professional report on the current state of your roof after the weather event.",
@@ -92,6 +95,7 @@ export const CONTENT = {
       id: "insurance-expert",
       title: "Insurance Management",
       description: "",
+      imageName: "insurance-management",
       features: [
         "Specialized Negotiation: Direct adjustment and negotiation of supplements to ensure total project coverage.",
         "Code-Compliant Restoration: We build based strictly on Massachusetts & Rhode Island IRC codes and ANSI/IICRC S500 standards.",
@@ -103,6 +107,7 @@ export const CONTENT = {
       id: "tree-damage",
       title: "Fallen Tree Damage",
       description: "",
+      imageName: "fallen-tree-damage",
       features: [
         "Emergency Extraction: Safe and immediate removal of fallen trees affecting your property's structure.",
         "Structural Assessment: Technical evaluation of the damage caused to the roof and underlying framing.",
@@ -114,6 +119,7 @@ export const CONTENT = {
       id: "exterior-repairs",
       title: "Exterior Repairs",
       description: "",
+      imageName: "exterior-repairs",
       features: [
         "Siding Restoration: Repair and replacement of damaged siding to maintain insulation and aesthetic appeal.",
         "Soffit & Fascia: Specialized fixes for vulnerable roof overhang components protecting against moisture and pests.",
