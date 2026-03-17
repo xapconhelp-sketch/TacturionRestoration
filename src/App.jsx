@@ -444,8 +444,8 @@ function Services() {
                 {s.imageName && (
                   <div className="card-image-banner">
                     <picture>
-                      <source srcSet={`/src/assets/images/services/${s.imageName}.webp`} type="image/webp" />
-                      <img src={`/src/assets/images/services/${s.imageName}.jpg`} alt={s.title} style={{ objectPosition: imgPosition }} />
+                      <source srcSet={`/images/services/${s.imageName}.webp`} type="image/webp" />
+                      <img src={`/images/services/${s.imageName}.jpg`} alt={s.title} style={{ objectPosition: imgPosition }} />
                     </picture>
                   </div>
                 )}
