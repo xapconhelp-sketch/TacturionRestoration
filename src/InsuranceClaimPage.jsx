@@ -275,14 +275,19 @@ export default function InsuranceClaimPage() {
                                 </div>
 
                                 <div style={{ padding: '1.8rem 2.5rem 2.5rem' }}>
-                                    <form style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                                    <form action="https://formsubmit.co/tacurirestoration@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                                        {/* Hidden fields for FormSubmit */}
+                                        <input type="hidden" name="_captcha" value="false" />
+                                        <input type="hidden" name="_next" value={window.location.href} />
+                                        <input type="hidden" name="_subject" value="New Inspection Request - Tacurion Restoration" />
+
                                         <div className="grid grid-cols-2 gap-3">
-                                            {[['First Name', 'John'], ['Last Name', 'Smith']].map(([label, ph], i) => (
+                                            {[['First Name', 'John', 'FirstName'], ['Last Name', 'Smith', 'LastName']].map(([label, ph, name], i) => (
                                                 <div key={i}>
                                                     <div style={{ fontSize: '0.67rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: '0.35rem', paddingLeft: 2 }}>{label} *</div>
                                                     <div style={{ position: 'relative' }}>
                                                         <User size={15} style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: 13, color: 'rgba(255,255,255,0.22)' }} />
-                                                        <input type="text" placeholder={ph} required className="form-input" />
+                                                        <input type="text" name={name} placeholder={ph} required className="form-input" />
                                                     </div>
                                                 </div>
                                             ))}
@@ -291,21 +296,21 @@ export default function InsuranceClaimPage() {
                                             <div style={{ fontSize: '0.67rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: '0.35rem', paddingLeft: 2 }}>Phone Number *</div>
                                             <div style={{ position: 'relative' }}>
                                                 <Smartphone size={15} style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: 13, color: 'rgba(255,255,255,0.22)' }} />
-                                                <input type="tel" placeholder="(508) 000-0000" required className="form-input" />
+                                                <input type="tel" name="Phone" placeholder="(508) 000-0000" required className="form-input" />
                                             </div>
                                         </div>
                                         <div>
                                             <div style={{ fontSize: '0.67rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: '0.35rem', paddingLeft: 2 }}>Type of Damage *</div>
-                                            <select required className="form-input" style={{ paddingLeft: '13px', appearance: 'auto' }}>
-                                                <option value="" disabled selected>Select an option...</option>
-                                                <option value="hail">Hail Damage</option>
-                                                <option value="wind">Wind Damage</option>
-                                                <option value="tree">Fallen Tree / Structural</option>
-                                                <option value="water">Roof Leak / Water</option>
+                                            <select name="DamageType" required className="form-input" style={{ paddingLeft: '13px', appearance: 'auto' }} defaultValue="">
+                                                <option value="" disabled style={{ color: '#000' }}>Select an option...</option>
+                                                <option value="Hail Damage" style={{ color: '#000' }}>Hail Damage</option>
+                                                <option value="Wind Damage" style={{ color: '#000' }}>Wind Damage</option>
+                                                <option value="Fallen Tree / Structural" style={{ color: '#000' }}>Fallen Tree / Structural</option>
+                                                <option value="Roof Leak / Water" style={{ color: '#000' }}>Roof Leak / Water</option>
                                             </select>
                                         </div>
                                         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 10, padding: '0.85rem 1rem' }}>
-                                            <input type="checkbox" id="consent-cb" required style={{ width: 15, height: 15, flexShrink: 0, marginTop: 2, accentColor: 'var(--gold)', cursor: 'pointer' }} />
+                                            <input type="checkbox" name="SMS_Consent" id="consent-cb" value="Yes" required style={{ width: 15, height: 15, flexShrink: 0, marginTop: 2, accentColor: 'var(--gold)', cursor: 'pointer' }} />
                                             <label htmlFor="consent-cb" style={{ fontSize: '0.71rem', color: 'rgba(255,255,255,0.38)', lineHeight: 1.55, cursor: 'pointer' }}>
                                                 I agree to receive calls or texts about my inspection request.
                                             </label>
