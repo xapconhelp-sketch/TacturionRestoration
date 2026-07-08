@@ -297,8 +297,8 @@ function Hero() {
           <motion.div variants={fadeUp} custom={2} style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #C5A059, #e8c97a)', borderRadius: 2, marginBottom: '1.8rem' }} />
 
           <motion.p variants={fadeUp} custom={2} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', maxWidth: 580, lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', marginBottom: '3rem' }}>
-            Specialists in roofing, maintenance and professional restoration.{' '}
-            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Fall River, MA | Rhode Island — 15+ years protecting homes.</span>
+            Roof Replacement, Roof Repair, Roof Inspection & Insurance Claims.{' '}
+            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Massachusett | Rhode Island — 15+ years protecting homes.</span>
           </motion.p>
 
           <motion.div variants={fadeUp} custom={3} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
