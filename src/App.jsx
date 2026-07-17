@@ -288,17 +288,20 @@ function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 6vw, 5.8rem)', fontWeight: 900, lineHeight: 1.0, letterSpacing: '-0.03em', color: '#fff', marginBottom: '1.8rem', maxWidth: 900 }}>
-            Tacurion Restoration:{' '}
-            <span style={{ color: '#C5A059', display: 'block' }}>Complete Home</span>
-            <span style={{ fontStyle: 'italic' }}>Solutions</span>
+          <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 6vw, 5.8rem)', fontWeight: 900, lineHeight: 1.0, letterSpacing: '-0.03em', color: '#fff', marginBottom: '0.8rem', maxWidth: 900 }}>
+            Tacurion Restoration
           </motion.h1>
+          
+          <motion.h2 variants={fadeUp} custom={1.2} style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.4rem)', fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.01em', color: '#C5A059', marginBottom: '1.8rem', maxWidth: 900 }}>
+            Roof Replacement, Roof Repair,<br />
+            <span style={{ fontStyle: 'italic', opacity: 0.9 }}>Roof Inspection & Insurance Claims</span>
+          </motion.h2>
 
           <motion.div variants={fadeUp} custom={2} style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #C5A059, #e8c97a)', borderRadius: 2, marginBottom: '1.8rem' }} />
 
           <motion.p variants={fadeUp} custom={2} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', maxWidth: 580, lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', marginBottom: '3rem' }}>
-            Roof Replacement, Roof Repair, Roof Inspection & Insurance Claims.{' '}
-            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Massachusett | Rhode Island — 15+ years protecting homes.</span>
+            Specialists in roofing, maintenance and professional restoration.{' '}
+            <span style={{ color: 'rgba(197,160,89,0.9)', fontWeight: 600 }}>Massachusetts | Rhode Island — 15+ years protecting homes.</span>
           </motion.p>
 
           <motion.div variants={fadeUp} custom={3} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '3rem' }}>
