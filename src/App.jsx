@@ -288,13 +288,13 @@ function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.8rem, 6vw, 5.8rem)', fontWeight: 900, lineHeight: 1.0, letterSpacing: '-0.03em', color: '#fff', marginBottom: '0.8rem', maxWidth: 900 }}>
-            Tacurion Restoration
+          <motion.h1 variants={fadeUp} custom={1} style={{ fontSize: 'clamp(2.2rem, 4.5vw, 4.2rem)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#fff', marginBottom: '0.8rem', maxWidth: 900 }}>
+            Roof Replacement, Roof Repair, Roof Inspection & Insurance Claims
           </motion.h1>
           
           <motion.h2 variants={fadeUp} custom={1.2} style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.4rem)', fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.01em', color: '#C5A059', marginBottom: '1.8rem', maxWidth: 900 }}>
-            Roof Replacement, Roof Repair,<br />
-            <span style={{ fontStyle: 'italic', opacity: 0.9 }}>Roof Inspection & Insurance Claims</span>
+            Your home and your family—<br className="hidden sm:block" />
+            <span style={{ fontStyle: 'italic', opacity: 0.9 }}>our priority</span>
           </motion.h2>
 
           <motion.div variants={fadeUp} custom={2} style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #C5A059, #e8c97a)', borderRadius: 2, marginBottom: '1.8rem' }} />
